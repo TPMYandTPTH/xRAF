@@ -43,47 +43,51 @@ const translations = {
         dashboardText: "Dashboard",
         clickHereText: "TP RAF",
         tpGlobal: "TP Global",
-        termsContent: `
-        <h4>Refer a Friend Program Terms</h4>
-        <p>By participating in the TP (Teleperformance Malaysia Sdn Bhd.) Refer a Friend program, you agree to the following terms:</p>
-        
-        <table border="1" style="margin: 10px 0; border-collapse: collapse;">
-            <tr>
-                <th style="padding: 5px 10px;">Milestone</th>
-                <th style="padding: 5px 10px;">Bonus Amount</th>
-            </tr>
-            <tr>
-                <td style="padding: 5px 10px;">Candidate passes the assessment</td>
-                <td style="padding: 5px 10px;">RM50</td>
-            </tr>
-            <tr>
-                <td style="padding: 5px 10px;">Candidate completes probation (90 days)</td>
-                <td style="padding: 5px 10px;">RM750</td>
-            </tr>
-        </table>
-        
-        <ol>
-            <li><strong>Payment</strong>:
-                <ul style="list-style-type: disc; margin-left: 20px;">
-                    <li>Bonuses (total RM800) will be paid via Touch 'n Go e-wallet.</li>
-                    <li>Ensure the provided mobile number matches your linked Touch 'n Go account.</li>
-                </ul>
-            </li>
-            <li><strong>Eligibility</strong>:
-                <ul style="list-style-type: disc; margin-left: 20px;">
-                    <li>All referred candidates must meet the position's minimum qualifications.</li>
-                    <li>Ex-TP employees will only be considered as valid referred candidates after a 12-month cooling-off period from their last working day at TP.</li>
-                    <li>Referrals must not be current TP Group employees (any country, including full-time, part-time, contract, or temporary staff).</li>
-                    <li>Internship/part-time role referrals are ineligible for bonuses.</li>
-                </ul>
-            </li>
-            <li>You confirm your referred friend consents to share their information with TP for recruitment purposes.</li>
-            <li>You consent to TP collecting and using your personal data for program administration.</li>
-            <li>TP reserves the right to modify or terminate this program at any time.</li>
-            <li>All hiring decisions are at TP’s sole discretion.</li>
-        </ol>
-        <p>Last updated: ${new Date().toLocaleDateString('en-US')}</p>
-        `,        
+termsContent: `
+<h4>Refer a Friend Program Terms and Conditions</h4>
+<p>By participating in the TP (Teleperformance Malaysia Sdn Bhd.) Refer a Friend program, you agree to the following terms:</p>
+
+<table border="0" style="width: 100%; margin: 15px 0; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <thead>
+        <tr style="background-color: #f5f5f5;">
+            <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">Milestone</th>
+            <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">Bonus Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 10px 15px;">Candidate passes the assessment</td>
+            <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM50</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px 15px;">Candidate completes probation (90 days)</td>
+            <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM750</td>
+        </tr>
+    </tbody>
+</table>
+
+<ol>
+    <li><strong>Payment</strong>:
+        <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Bonuses (total RM800) will be paid via Touch 'n Go e-wallet.</li>
+            <li>Ensure the provided mobile number matches your linked Touch 'n Go account.</li>
+        </ul>
+    </li>
+    <li><strong>Eligibility</strong>:
+        <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>All referred candidates must meet the position's minimum qualifications.</li>
+            <li>Ex-TP employees will only be considered as valid referred candidates after a 12-month cooling-off period from their last working day at TP.</li>
+            <li>Referrals must not be current TP Group employees (any country, including full-time, part-time, contract, or temporary staff).</li>
+            <li>Internship/part-time role referrals are ineligible for bonuses.</li>
+        </ul>
+    </li>
+    <li>You confirm your referred friend consents to share their information with TP for recruitment purposes.</li>
+    <li>You consent to TP collecting and using your personal data for program administration.</li>
+    <li>TP reserves the right to modify or terminate this program at any time.</li>
+    <li>All hiring decisions are at TP's sole discretion.</li>
+</ol>
+<p style="font-size: 0.9em; color: #666; margin-top: 20px;">Last updated: ${new Date().toLocaleDateString('en-US')}</p>
+`,      
         noJobError: "No job found for the selected criteria",
         jobPortalText: "TP Job Portal",
         loadError: "Failed to load job data. Please try again later."

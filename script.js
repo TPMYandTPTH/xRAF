@@ -46,6 +46,12 @@ const translations = {
         termsContent: `
         <h4>Refer a Friend Program Terms</h4>
         <p>By participating in the TP (Teleperformance Malaysia Sdn Bhd.) Refer a Friend program, you agree to the following terms:</p>
+        
+        <p><strong>Referral bonuses will be paid via Touch 'n Go e-wallet. Please ensure the mobile number provided matches the one linked to your Touch 'n Go account.</strong></p>
+        <p><strong>Ex-TP employees are eligible for referral only after a minimum cooling-off period of 12 months from their last working day at TP.</strong></p>
+        <p><strong>Referrals must not be current employees of the TP Group in any country. This includes full-time, part-time, contract, project-based, or temporary staff.</strong></p>
+        <p><strong>Referrals for internship or part-time positions are not eligible for referral incentives, though such referrals are still welcome.</strong></p>
+        
         <ol>
             <li>All referred candidates must meet the minimum qualifications for the position.</li>
             <li>You confirm that your referred friend is aware their information will be shared with TP (Teleperformance Malaysia Sdn Bhd.) for recruitment purposes.</li>
@@ -70,7 +76,7 @@ const translations = {
             <li>All hiring decisions are made at the sole discretion of TP (Teleperformance Malaysia Sdn Bhd.).</li>
         </ol>
         <p>Last updated: ${new Date().toLocaleDateString('en-US')}</p>
-        `,
+        `,        
         noJobError: "No job found for the selected criteria",
         jobPortalText: "TP Job Portal",
         loadError: "Failed to load job data. Please try again later."
@@ -121,15 +127,21 @@ const translations = {
         tpGlobal: "TP Global",
         termsContent: `
         <h4>友人紹介プログラムの条件</h4>
-        <p>TP（Teleperformance Malaysia Sdn Bhd.）の友人紹介プログラムに参加することで、以下の条件に同意したものとみなされます：</p>
+        <p>TP (Teleperformance Malaysia Sdn Bhd.) の「友人紹介プログラム」に参加することにより、以下の条件に同意するものとします：</p>
+        
+        <p><strong>紹介ボーナスはTouch 'n Go電子財布を通じて支払われます。提供された携帯電話番号がTouch 'n Goアカウントにリンクされている番号と一致することを確認してください。</strong></p>
+        <p><strong>元TP従業員は、TPでの最終勤務日から最低12ヶ月の冷却期間を経た後でのみ紹介資格を得られます。</strong></p>
+        <p><strong>紹介対象者は、いかなる国のTPグループの現役従業員であってはなりません。これには正社員、パートタイム、契約社員、プロジェクトベース、または臨時スタッフが含まれます。</strong></p>
+        <p><strong>インターンシップまたはパートタイム職の紹介はボーナス対象外ですが、紹介自体は歓迎します。</strong></p>
+        
         <ol>
-            <li>紹介された候補者は、ポジションの最低資格を満たしている必要があります。</li>
-            <li>紹介された友人が、採用目的でTP（Teleperformance Malaysia Sdn Bhd.）に情報が共有されることを認識していることを確認します。</li>
+            <li>紹介された候補者は、該当職位の最低条件を満たしている必要があります。</li>
+            <li>紹介された友人が、採用目的でTP (Teleperformance Malaysia Sdn Bhd.) に情報が共有されることを承知していることを確認します。</li>
             <li>紹介ボーナス（RM800）は以下のスケジュールに従って支払われます：
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
                         <th style="padding: 5px 10px;">達成基準</th>
-                        <th style="padding: 5px 10px;">ボーナス金額</th>
+                        <th style="padding: 5px 10px;">ボーナス額</th>
                     </tr>
                     <tr>
                         <td style="padding: 5px 10px;">候補者が審査を通過</td>
@@ -141,12 +153,12 @@ const translations = {
                     </tr>
                 </table>
             </li>
-            <li>参加により、プログラム管理のためにTP（Teleperformance Malaysia Sdn Bhd.）が個人データを収集・使用することに同意したものとみなされます。</li>
-            <li>TP（Teleperformance Malaysia Sdn Bhd.）は、いつでもこのプログラムを変更または終了する権利を留保します。</li>
-            <li>すべての採用決定は、TP（Teleperformance Malaysia Sdn Bhd.）の単独の裁量で行われます。</li>
+            <li>参加により、TP (Teleperformance Malaysia Sdn Bhd.) がプログラム運営のために個人データを収集・使用することに同意したものとみなされます。</li>
+            <li>TP (Teleperformance Malaysia Sdn Bhd.) は、本プログラムを随時変更または終了する権利を留保します。</li>
+            <li>採用の決定は、TP (Teleperformance Malaysia Sdn Bhd.) の単独の裁量により行われます。</li>
         </ol>
         <p>最終更新日: ${new Date().toLocaleDateString('ja-JP')}</p>
-        `,
+        `,        
         noJobError: "選択した条件に該当する仕事が見つかりません",
         loadError: "仕事のデータの読み込みに失敗しました。後ほど再度お試しください。"
     },
@@ -196,11 +208,17 @@ const translations = {
         tpGlobal: "TP Global",
         termsContent: `
         <h4>친구 추천 프로그램 약관</h4>
-        <p>TP (Teleperformance Malaysia Sdn Bhd.)의 친구 추천 프로그램에 참여함으로써, 귀하는 다음 약관에 동의하는 것으로 간주됩니다:</p>
+        <p>TP (Teleperformance Malaysia Sdn Bhd.)의 친구 추천 프로그램에 참여함으로써, 귀하는 다음 약관에 동의합니다:</p>
+        
+        <p><strong>추천 보너스는 Touch 'n Go 전자지갑으로 지급됩니다. 제공된 휴대폰 번호가 Touch 'n Go 계정에 연결된 번호와 일치하는지 확인하십시오.</strong></p>
+        <p><strong>전 TP 직원은 TP에서의 마지막 근무일로부터 최소 12개월의 유예 기간이 지난 후에만 추천 자격이 부여됩니다.</strong></p>
+        <p><strong>추천 대상자는 어떤 국가에서든 TP 그룹의 현재 직원이 아니어야 합니다. 여기에는 정규직, 파트타임, 계약직, 프로젝트 기반 또는 임시 직원이 포함됩니다.</strong></p>
+        <p><strong>인턴십 또는 파트타임 직위에 대한 추천은 보너스 대상이 아니지만, 추천 자체는 환영합니다.</strong></p>
+        
         <ol>
-            <li>추천된 모든 후보자는 해당 직위의 최소 자격 요건을 충족해야 합니다.</li>
-            <li>귀하는 추천된 친구가 채용 목적으로 TP (Teleperformance Malaysia Sdn Bhd.)와 정보가 공유된다는 사실을 인지하고 있음을 확인합니다.</li>
-            <li>추천 보너스 (RM800)는 다음 일정에 따라 지급됩니다:
+            <li>추천된 후보자는 해당 직위의 최소 자격 요건을 충족해야 합니다.</li>
+            <li>추천된 친구가 채용 목적으로 TP (Teleperformance Malaysia Sdn Bhd.)와 정보가 공유된다는 사실을 알고 있음을 확인합니다.</li>
+            <li>추천 보너스(RM800)는 다음 일정에 따라 지급됩니다:
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
                         <th style="padding: 5px 10px;">단계</th>
@@ -211,16 +229,16 @@ const translations = {
                         <td style="padding: 5px 10px;">RM50</td>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 10px;">후보자가 수습 기간 (90일) 완료</td>
+                        <td style="padding: 5px 10px;">후보자가 수습 기간(90일) 완료</td>
                         <td style="padding: 5px 10px;">RM750</td>
                     </tr>
                 </table>
             </li>
-            <li>참여함으로써, 귀하는 프로그램 관리 목적으로 TP (Teleperformance Malaysia Sdn Bhd.)가 귀하의 개인 데이터를 수집 및 사용하는 것에 동의합니다.</li>
+            <li>참여함으로써, 귀하는 TP (Teleperformance Malaysia Sdn Bhd.)가 프로그램 관리를 위해 개인 데이터를 수집 및 사용하는 것에 동의합니다.</li>
             <li>TP (Teleperformance Malaysia Sdn Bhd.)는 언제든지 이 프로그램을 수정 또는 종료할 권리를 보유합니다.</li>
-            <li>모든 채용 결정은 TP (Teleperformance Malaysia Sdn Bhd.)의 단독 재량에 따라 이루어집니다.</li>
+            <li>모든 채용 결정은 TP (Teleperformance Malaysia Sdn Bhd.)의 단독 재량에 따릅니다.</li>
         </ol>
-        <p>마지막 업데이트: ${new Date().toLocaleDateString('ko-KR')}</p>
+        <p>최종 업데이트: ${new Date().toLocaleDateString('ko-KR')}</p>
         `,
         noJobError: "선택한 기준에 맞는 직업을 찾을 수 없습니다",
         loadError: "작업 데이터를 로드하지 못했습니다. 나중에 다시 시도하십시오."
@@ -271,10 +289,16 @@ const translations = {
         tpGlobal: "TP Global",
         termsContent: `
         <h4>推荐朋友计划条款</h4>
-        <p>参与TP（Teleperformance Malaysia Sdn Bhd.）推荐朋友计划，即表示您同意以下条款：</p>
+        <p>参与TP (Teleperformance Malaysia Sdn Bhd.)的推荐朋友计划，即表示您同意以下条款：</p>
+        
+        <p><strong>推荐奖金将通过Touch 'n Go电子钱包支付。请确保提供的手机号码与您Touch 'n Go账户绑定的号码一致。</strong></p>
+        <p><strong>前TP员工需在离职后经过至少12个月的冷却期，方具备推荐资格。</strong></p>
+        <p><strong>被推荐人不得是任何国家TP集团的现任员工，包括全职、兼职、合约、项目制或临时员工。</strong></p>
+        <p><strong>实习或兼职职位的推荐不具奖金资格，但仍欢迎推荐。</strong></p>
+        
         <ol>
             <li>所有被推荐人必须满足该职位的最低要求。</li>
-            <li>您确认被推荐人知晓其信息将因招聘目的被TP（Teleperformance Malaysia Sdn Bhd.）共享。</li>
+            <li>您确认被推荐朋友知晓其信息将因招聘目的被共享给TP (Teleperformance Malaysia Sdn Bhd.)。</li>
             <li>推荐奖金（RM800）将按以下时间表发放：
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
@@ -291,12 +315,12 @@ const translations = {
                     </tr>
                 </table>
             </li>
-            <li>参与即代表您同意TP（Teleperformance Malaysia Sdn Bhd.）为管理计划而收集和使用您的个人数据。</li>
-            <li>TP（Teleperformance Malaysia Sdn Bhd.）保留随时修改或终止本计划的权利。</li>
-            <li>所有聘用决定均由TP（Teleperformance Malaysia Sdn Bhd.）全权决定。</li>
+            <li>参与即表示您同意TP (Teleperformance Malaysia Sdn Bhd.)为计划管理收集和使用您的个人数据。</li>
+            <li>TP (Teleperformance Malaysia Sdn Bhd.)保留随时修改或终止本计划的权利。</li>
+            <li>所有聘用决定均由TP (Teleperformance Malaysia Sdn Bhd.)全权决定。</li>
         </ol>
-        <p>最后更新日期: ${new Date().toLocaleDateString('zh-CN')}</p>
-        `,
+        <p>最后更新: ${new Date().toLocaleDateString('zh-CN')}</p>
+        `,        
         noJobError: "找不到符合所选条件的工作",
         loadError: "无法加载工作数据。请稍后再试。"
     },
@@ -346,10 +370,16 @@ const translations = {
         tpGlobal: "TP Global",
         termsContent: `
         <h4>推薦朋友計劃條款</h4>
-        <p>參與TP（Teleperformance Malaysia Sdn Bhd.）推薦朋友計劃，即代表你同意以下條款：</p>
+        <p>參與TP (Teleperformance Malaysia Sdn Bhd.)嘅推薦朋友計劃，即代表你同意以下條款：</p>
+        
+        <p><strong>推薦獎金會透過Touch 'n Go電子錢包發放。請確保提供嘅手機號碼同你Touch 'n Go賬戶綁定嘅號碼一致。</strong></p>
+        <p><strong>前TP員工必須離職至少12個月冷靜期後，先有資格參與推薦。</strong></p>
+        <p><strong>被推薦人唔可以係任何國家TP集團嘅現職員工，包括全職、兼職、合約、項目制或臨時員工。</strong></p>
+        <p><strong>實習或兼職職位嘅推薦不合資格領取獎金，但仍歡迎推薦。</strong></p>
+        
         <ol>
             <li>所有被推薦人必須符合該職位嘅最低要求。</li>
-            <li>你確認被推薦人知悉其資料會為招聘目的而提供畀TP（Teleperformance Malaysia Sdn Bhd.）。</li>
+            <li>你確認被推薦朋友知悉其資料會為招聘目的而提供畀TP (Teleperformance Malaysia Sdn Bhd.)。</li>
             <li>推薦獎金（RM800）將按以下時間表發放：
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
@@ -366,12 +396,12 @@ const translations = {
                     </tr>
                 </table>
             </li>
-            <li>參與計劃即代表你同意TP（Teleperformance Malaysia Sdn Bhd.）為管理計劃而收集同使用你嘅個人資料。</li>
-            <li>TP（Teleperformance Malaysia Sdn Bhd.）保留隨時修改或終止計劃嘅權利。</li>
-            <li>所有聘用決定均由TP（Teleperformance Malaysia Sdn Bhd.）全權決定。</li>
+            <li>參與計劃即代表你同意TP (Teleperformance Malaysia Sdn Bhd.)收集同使用你嘅個人資料作計劃管理用途。</li>
+            <li>TP (Teleperformance Malaysia Sdn Bhd.)保留隨時修改或終止計劃嘅權利。</li>
+            <li>所有聘用決定均由TP (Teleperformance Malaysia Sdn Bhd.)全權決定。</li>
         </ol>
-        <p>最後更新日期: ${new Date().toLocaleDateString('zh-HK')}</p>
-        `,
+        <p>最後更新: ${new Date().toLocaleDateString('zh-HK')}</p>
+        `,        
         noJobError: "找不到符合所選條件的工作",
         loadError: "無法加載工作數據。請稍後再試。"
     }

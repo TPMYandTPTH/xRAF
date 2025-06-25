@@ -63,21 +63,21 @@ const translations = {
         </table>
         
         <ol>
-            <li><strong>Eligibility Rules</strong>:
-                <ul style="list-style-type: disc; margin-left: 20px;">
-                    <li>All referred candidates must meet the position's minimum qualifications.</li>
-                    <li>Ex-TP employees may only be <strong>considered as valid referred candidates</strong> after a 12-month cooling-off period from their last working day at TP.</li>
-                    <li>Referrals must not be current TP Group employees (any country, including full-time, part-time, contract, or temporary staff).</li>
-                    <li>Internship/part-time role referrals are ineligible for bonuses (but still welcome).</li>
-                </ul>
-            </li>
-            <li>You confirm your referred friend consents to share their information with TP for recruitment purposes.</li>
             <li><strong>Payment</strong>:
                 <ul style="list-style-type: disc; margin-left: 20px;">
                     <li>Bonuses (total RM800) will be paid via Touch 'n Go e-wallet.</li>
                     <li>Ensure the provided mobile number matches your linked Touch 'n Go account.</li>
                 </ul>
             </li>
+            <li><strong>Eligibility</strong>:
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li>All referred candidates must meet the position's minimum qualifications.</li>
+                    <li>Ex-TP employees will only be considered as valid referred candidates after a 12-month cooling-off period from their last working day at TP.</li>
+                    <li>Referrals must not be current TP Group employees (any country, including full-time, part-time, contract, or temporary staff).</li>
+                    <li>Internship/part-time role referrals are ineligible for bonuses.</li>
+                </ul>
+            </li>
+            <li>You confirm your referred friend consents to share their information with TP for recruitment purposes.</li>
             <li>You consent to TP collecting and using your personal data for program administration.</li>
             <li>TP reserves the right to modify or terminate this program at any time.</li>
             <li>All hiring decisions are at TP’s sole discretion.</li>

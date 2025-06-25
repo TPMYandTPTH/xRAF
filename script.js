@@ -120,15 +120,15 @@ const translations = {
         clickHereText: "TP RAF",
         tpGlobal: "TP Global",
         termsContent: `
-        <h4>友人紹介プログラムの利用規約</h4>
-        <p>TP (Teleperformance Malaysia Sdn Bhd.)の友人紹介プログラムに参加することで、以下の規約に同意したものとみなされます：</p>
+        <h4>友人紹介プログラムの条件</h4>
+        <p>TP（Teleperformance Malaysia Sdn Bhd.）の友人紹介プログラムに参加することで、以下の条件に同意したものとみなされます：</p>
         <ol>
-            <li>紹介された候補者は、ポジションの最低要件を満たしている必要があります。</li>
-            <li>候補者の情報を提出する前に、その本人から同意を得る必要があります。</li>
-            <li>紹介ボーナスは以下のスケジュールに従って支払われます：
+            <li>紹介された候補者は、ポジションの最低資格を満たしている必要があります。</li>
+            <li>紹介された友人が、採用目的でTP（Teleperformance Malaysia Sdn Bhd.）に情報が共有されることを認識していることを確認します。</li>
+            <li>紹介ボーナス（RM800）は以下のスケジュールに従って支払われます：
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
-                        <th style="padding: 5px 10px;">達成項目</th>
+                        <th style="padding: 5px 10px;">達成基準</th>
                         <th style="padding: 5px 10px;">ボーナス金額</th>
                     </tr>
                     <tr>
@@ -136,13 +136,14 @@ const translations = {
                         <td style="padding: 5px 10px;">RM50</td>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 10px;">候補者が採用され、試用期間を通過しました</td>
+                        <td style="padding: 5px 10px;">候補者が試用期間（90日）を完了</td>
                         <td style="padding: 5px 10px;">RM750</td>
                     </tr>
                 </table>
             </li>
-            <li>TP (Teleperformance Malaysia Sdn Bhd.)は本プログラムを随時変更または終了する権利を有します。</li>
-            <li>採用に関するすべての決定は、TP (Teleperformance Malaysia Sdn Bhd.)の裁量に委ねられています。</li>
+            <li>参加により、プログラム管理のためにTP（Teleperformance Malaysia Sdn Bhd.）が個人データを収集・使用することに同意したものとみなされます。</li>
+            <li>TP（Teleperformance Malaysia Sdn Bhd.）は、いつでもこのプログラムを変更または終了する権利を留保します。</li>
+            <li>すべての採用決定は、TP（Teleperformance Malaysia Sdn Bhd.）の単独の裁量で行われます。</li>
         </ol>
         <p>最終更新日: ${new Date().toLocaleDateString('ja-JP')}</p>
         `,
@@ -195,28 +196,29 @@ const translations = {
         tpGlobal: "TP Global",
         termsContent: `
         <h4>친구 추천 프로그램 약관</h4>
-        <p>TP (Teleperformance Malaysia Sdn Bhd.) 친구 추천 프로그램에 참여함으로써 귀하는 다음 약관에 동의하는 것으로 간주됩니다:</p>
+        <p>TP (Teleperformance Malaysia Sdn Bhd.)의 친구 추천 프로그램에 참여함으로써, 귀하는 다음 약관에 동의하는 것으로 간주됩니다:</p>
         <ol>
             <li>추천된 모든 후보자는 해당 직위의 최소 자격 요건을 충족해야 합니다.</li>
-            <li>후보자 정보를 제출하기 전에 반드시 해당 개인으로부터 동의를 받아야 합니다.</li>
-            <li>추천 보너스는 다음 기준에 따라 지급됩니다:
+            <li>귀하는 추천된 친구가 채용 목적으로 TP (Teleperformance Malaysia Sdn Bhd.)와 정보가 공유된다는 사실을 인지하고 있음을 확인합니다.</li>
+            <li>추천 보너스 (RM800)는 다음 일정에 따라 지급됩니다:
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
                         <th style="padding: 5px 10px;">단계</th>
                         <th style="padding: 5px 10px;">보너스 금액</th>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 10px;">후보자 평가 통과</td>
+                        <td style="padding: 5px 10px;">후보자가 평가 통과</td>
                         <td style="padding: 5px 10px;">RM50</td>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 10px;">후보자가 채용되어 수습 기간을 통과했습니다</td>
+                        <td style="padding: 5px 10px;">후보자가 수습 기간 (90일) 완료</td>
                         <td style="padding: 5px 10px;">RM750</td>
                     </tr>
                 </table>
             </li>
-            <li>TP (Teleperformance Malaysia Sdn Bhd.)는 본 프로그램을 언제든지 수정하거나 종료할 권리를 보유합니다.</li>
-            <li>모든 채용 결정은 TP (Teleperformance Malaysia Sdn Bhd.)의 단독 재량에 따릅니다.</li>
+            <li>참여함으로써, 귀하는 프로그램 관리 목적으로 TP (Teleperformance Malaysia Sdn Bhd.)가 귀하의 개인 데이터를 수집 및 사용하는 것에 동의합니다.</li>
+            <li>TP (Teleperformance Malaysia Sdn Bhd.)는 언제든지 이 프로그램을 수정 또는 종료할 권리를 보유합니다.</li>
+            <li>모든 채용 결정은 TP (Teleperformance Malaysia Sdn Bhd.)의 단독 재량에 따라 이루어집니다.</li>
         </ol>
         <p>마지막 업데이트: ${new Date().toLocaleDateString('ko-KR')}</p>
         `,
@@ -268,12 +270,12 @@ const translations = {
         clickHereText: "TP RAF",
         tpGlobal: "TP Global",
         termsContent: `
-        <h4>推荐好友计划条款</h4>
-        <p>参与TP (Teleperformance Malaysia Sdn Bhd.)推荐好友计划，即表示您同意以下条款：</p>
+        <h4>推荐朋友计划条款</h4>
+        <p>参与TP（Teleperformance Malaysia Sdn Bhd.）推荐朋友计划，即表示您同意以下条款：</p>
         <ol>
-            <li>所有被推荐候选人必须满足该职位的最低要求。</li>
-            <li>在提交被推荐人信息前，您必须获得其同意。</li>
-            <li>推荐奖金将按以下标准发放：
+            <li>所有被推荐人必须满足该职位的最低要求。</li>
+            <li>您确认被推荐人知晓其信息将因招聘目的被TP（Teleperformance Malaysia Sdn Bhd.）共享。</li>
+            <li>推荐奖金（RM800）将按以下时间表发放：
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
                         <th style="padding: 5px 10px;">阶段</th>
@@ -284,13 +286,14 @@ const translations = {
                         <td style="padding: 5px 10px;">RM50</td>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 10px;">候选人已被录用并通过试用期</td>
+                        <td style="padding: 5px 10px;">候选人完成试用期（90天）</td>
                         <td style="padding: 5px 10px;">RM750</td>
                     </tr>
                 </table>
             </li>
-            <li>TP (Teleperformance Malaysia Sdn Bhd.)保留随时修改或终止本计划的权利。</li>
-            <li>所有聘用决定均由TP (Teleperformance Malaysia Sdn Bhd.)全权决定。</li>
+            <li>参与即代表您同意TP（Teleperformance Malaysia Sdn Bhd.）为管理计划而收集和使用您的个人数据。</li>
+            <li>TP（Teleperformance Malaysia Sdn Bhd.）保留随时修改或终止本计划的权利。</li>
+            <li>所有聘用决定均由TP（Teleperformance Malaysia Sdn Bhd.）全权决定。</li>
         </ol>
         <p>最后更新日期: ${new Date().toLocaleDateString('zh-CN')}</p>
         `,
@@ -343,11 +346,11 @@ const translations = {
         tpGlobal: "TP Global",
         termsContent: `
         <h4>推薦朋友計劃條款</h4>
-        <p>參與TP (Teleperformance Malaysia Sdn Bhd.)推薦朋友計劃，即表示你同意以下條款：</p>
+        <p>參與TP（Teleperformance Malaysia Sdn Bhd.）推薦朋友計劃，即代表你同意以下條款：</p>
         <ol>
-            <li>所有被推薦候選人必須符合該職位嘅最低要求。</li>
-            <li>提交被推薦人資料前，你必須取得佢哋嘅同意。</li>
-            <li>推薦獎金會按以下標準發放：
+            <li>所有被推薦人必須符合該職位嘅最低要求。</li>
+            <li>你確認被推薦人知悉其資料會為招聘目的而提供畀TP（Teleperformance Malaysia Sdn Bhd.）。</li>
+            <li>推薦獎金（RM800）將按以下時間表發放：
                 <table border="1" style="margin: 10px 0; border-collapse: collapse;">
                     <tr>
                         <th style="padding: 5px 10px;">階段</th>
@@ -358,13 +361,14 @@ const translations = {
                         <td style="padding: 5px 10px;">RM50</td>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 10px;">候選人已被錄用並通過試用期</td>
+                        <td style="padding: 5px 10px;">候選人完成試用期（90日）</td>
                         <td style="padding: 5px 10px;">RM750</td>
                     </tr>
                 </table>
             </li>
-            <li>TP (Teleperformance Malaysia Sdn Bhd.)保留隨時修改或終止呢個計劃嘅權利。</li>
-            <li>所有聘用決定都由TP (Teleperformance Malaysia Sdn Bhd.)全權決定。</li>
+            <li>參與計劃即代表你同意TP（Teleperformance Malaysia Sdn Bhd.）為管理計劃而收集同使用你嘅個人資料。</li>
+            <li>TP（Teleperformance Malaysia Sdn Bhd.）保留隨時修改或終止計劃嘅權利。</li>
+            <li>所有聘用決定均由TP（Teleperformance Malaysia Sdn Bhd.）全權決定。</li>
         </ol>
         <p>最後更新日期: ${new Date().toLocaleDateString('zh-HK')}</p>
         `,

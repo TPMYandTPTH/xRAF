@@ -515,14 +515,25 @@ function showWelcomePopup() {
     const popup = document.createElement('div');
     popup.className = 'welcome-popup';
     
+    const logo = document.createElement('img');
+    logo.src = 'TPLogo11.png';
+    logo.alt = 'Teleperformance Logo';
+    logo.className = 'welcome-logo';
+    
     // Create money countdown container
     const countdownContainer = document.createElement('div');
     countdownContainer.className = 'welcome-countdown-container';
     
     const countdownTitle = document.createElement('div');
     countdownTitle.className = 'welcome-countdown-title';
-    countdownTitle.textContent = 'Welcome to TP External Refer A Friend Program';
-    
+    // Get welcome message in all languages
+    const welcomeMessages = [
+        translations.en.welcomeMessage,
+        translations.ja.welcomeMessage,
+        translations.ko.welcomeMessage,
+        translations['zh-CN'].welcomeMessage,
+        translations['zh-HK'].welcomeMessage
+    ];    
     const moneyCountdown = document.createElement('div');
     moneyCountdown.className = 'welcome-money-countdown';
     moneyCountdown.id = 'welcomeMoneyCountdown';
@@ -536,22 +547,12 @@ function showWelcomePopup() {
     countdownContainer.appendChild(moneyCountdown);
     countdownContainer.appendChild(hurryMessage);
     
-    const logo = document.createElement('img');
-    logo.src = 'TPLogo11.png';
-    logo.alt = 'Teleperformance Logo';
-    logo.className = 'welcome-logo';
+
     
     const messageContainer = document.createElement('div');
     messageContainer.className = 'welcome-message-container';
     
-    // Get welcome message in all languages
-    const welcomeMessages = [
-        translations.en.welcomeMessage,
-        translations.ja.welcomeMessage,
-        translations.ko.welcomeMessage,
-        translations['zh-CN'].welcomeMessage,
-        translations['zh-HK'].welcomeMessage
-    ];
+
     
     // Create a div for each language's welcome message
     welcomeMessages.forEach((msg, index) => {

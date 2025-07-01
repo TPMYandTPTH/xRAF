@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function() {
     phoneHint.className = 'phone-hint mt-1 small text-muted';
     elements.phoneNumber.parentNode.insertBefore(phoneHint, elements.phoneNumber.nextSibling);
 
-   function showWelcomePopup() {
+function showWelcomePopup() {
     const popup = document.createElement('div');
     popup.className = 'welcome-popup';
     
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = document.createElement('div');
         message.className = 'welcome-message-line';
         message.textContent = msg;
-        message.style.animationDelay = `${index * 0.5}s`; // Stagger the animations
+        message.style.animationDelay = `${index * 0.5}s`;
         messageContainer.appendChild(message);
     });
     
@@ -634,20 +634,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }, 5000);
 }
-        
-        popup.appendChild(logo);
-        popup.appendChild(messageContainer);
-        document.body.appendChild(popup);
-        
-        // Hide after 5 seconds (after all animations complete)
-        setTimeout(() => {
-            popup.classList.add('hidden');
-            // Remove after animation completes
-            setTimeout(() => {
-                popup.remove();
-            }, 1000);
-        }, 5000);
-    }
 
     function init() {
         showWelcomePopup();

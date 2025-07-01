@@ -572,7 +572,7 @@ function showWelcomePopup() {
     const startAmount = 30000;
     const endAmount = 20000;
     let currentAmount = startAmount;
-    const duration = 15000; // 15 seconds
+    const duration = 5000; // 5 seconds
     const startTime = Date.now();
     
     function formatMoney(amount) {

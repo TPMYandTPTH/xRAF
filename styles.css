@@ -569,6 +569,56 @@ footer a:hover {
     }
 }
 
+.money-countdown-container {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background, adjust to match your theme */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Adjust to match your color scheme */
+  margin-bottom: 10px;
+}
+
+.money-countdown {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e63946; /* Red color for emphasis, adjust to your brand */
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hurry-message {
+  font-size: 18px;
+  color: #333; /* Adjust to match your color scheme */
+  font-style: italic;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Add the pumping animation */
+@keyframes pump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pumping {
+  animation: pump 0.5s;
+}
+
+
 @media (max-width: 576px) {
     .container {
         padding: 15px;

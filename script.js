@@ -514,6 +514,71 @@ document.addEventListener('DOMContentLoaded', function() {
     function showWelcomePopup() {
         const popup = document.createElement('div');
         popup.className = 'welcome-popup';
+
+document.addEventListener('DOMContentLoaded', function() {
+  const moneyElement = document.getElementById('moneyCountdown');
+  const startAmount = 30000;
+  const endAmount = 20000;
+  let currentAmount = startAmount;
+  const duration = 15000; // 15 seconds for the countdown
+  const startTime = Date.now();
+  
+  function formatMoney(amount) {
+    return 'RM' + amount.toLocaleString('en-US');
+  }
+  
+  function updateCountdown() {
+    const elapsed = Date.now() - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Ease-out function to slow down at the end
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    
+    currentAmount = startAmount - (startAmount - endAmount) * easedProgress;
+    
+    moneyElement.textContent = formatMoney(Math.floor(currentAmount));
+    
+    // Add pumping effect when numbers change
+    moneyElement.classList.add('pumping');
+    setTimeout(() => {
+      moneyElement.classList.remove('pumping');
+    }, 500);
+    
+    // Randomly change the hurry message occasionally
+    if (Math.random() < 0.02) { // 2% chance per frame
+      updateHurryMessage();
+    }
+    
+    if (progress < 1) {
+      requestAnimationFrame(updateCountdown);
+    } else {
+      // Final message when countdown completes
+      const hurryMessages = [
+        "Last chance to claim your rewards!",
+        "Time's almost up! Don't miss out!",
+        "Final amounts remaining - act now!",
+        "Rewards are going fast - join today!"
+      ];
+      document.querySelector('.hurry-message').textContent = 
+        hurryMessages[Math.floor(Math.random() * hurryMessages.length)];
+    }
+  }
+  
+  function updateHurryMessage() {
+    const hurryMessages = [
+      "Hurry! The rewards are disappearing fast! 🚀",
+      "Don't wait - the amount is dropping! ⏳",
+      "Limited rewards available! 💰",
+      "Join now before it's too late! 🔥",
+      "Others are claiming their rewards - don't miss out! 👥"
+    ];
+    document.querySelector('.hurry-message').textContent = 
+      hurryMessages[Math.floor(Math.random() * hurryMessages.length)];
+  }
+  
+  // Start the countdown
+  updateCountdown();
+});
         
         const logo = document.createElement('img');
         logo.src = 'TPLogo11.png';

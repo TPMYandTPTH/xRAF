@@ -511,9 +511,14 @@ document.addEventListener('DOMContentLoaded', function() {
     phoneHint.className = 'phone-hint mt-1 small text-muted';
     elements.phoneNumber.parentNode.insertBefore(phoneHint, elements.phoneNumber.nextSibling);
 
-   function showWelcomePopup() {
+function showWelcomePopup() {
     const popup = document.createElement('div');
     popup.className = 'welcome-popup';
+    
+    const logo = document.createElement('img');
+    logo.src = 'TPLogo11.png';
+    logo.alt = 'Teleperformance Logo';
+    logo.className = 'welcome-logo';
     
     // Create money countdown container
     const countdownContainer = document.createElement('div');
@@ -521,8 +526,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const countdownTitle = document.createElement('div');
     countdownTitle.className = 'welcome-countdown-title';
-    countdownTitle.textContent = 'Welcome to TP External Refer A Friend Program';
-    
+    // Get welcome message in all languages
+    const welcomeMessages = [
+        translations.en.welcomeMessage,
+        translations.ja.welcomeMessage,
+        translations.ko.welcomeMessage,
+        translations['zh-CN'].welcomeMessage,
+        translations['zh-HK'].welcomeMessage
+    ];    
     const moneyCountdown = document.createElement('div');
     moneyCountdown.className = 'welcome-money-countdown';
     moneyCountdown.id = 'welcomeMoneyCountdown';
@@ -536,29 +547,19 @@ document.addEventListener('DOMContentLoaded', function() {
     countdownContainer.appendChild(moneyCountdown);
     countdownContainer.appendChild(hurryMessage);
     
-    const logo = document.createElement('img');
-    logo.src = 'TPLogo11.png';
-    logo.alt = 'Teleperformance Logo';
-    logo.className = 'welcome-logo';
+
     
     const messageContainer = document.createElement('div');
     messageContainer.className = 'welcome-message-container';
     
-    // Get welcome message in all languages
-    const welcomeMessages = [
-        translations.en.welcomeMessage,
-        translations.ja.welcomeMessage,
-        translations.ko.welcomeMessage,
-        translations['zh-CN'].welcomeMessage,
-        translations['zh-HK'].welcomeMessage
-    ];
+
     
     // Create a div for each language's welcome message
     welcomeMessages.forEach((msg, index) => {
         const message = document.createElement('div');
         message.className = 'welcome-message-line';
         message.textContent = msg;
-        message.style.animationDelay = `${index * 0.5}s`; // Stagger the animations
+        message.style.animationDelay = `${index * 0.5}s`;
         messageContainer.appendChild(message);
     });
     
@@ -572,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const startAmount = 30000;
     const endAmount = 20000;
     let currentAmount = startAmount;
-    const duration = 15000; // 15 seconds
+    const duration = 3000; // 3 seconds
     const startTime = Date.now();
     
     function formatMoney(amount) {
@@ -634,20 +635,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }, 5000);
 }
-        
-        popup.appendChild(logo);
-        popup.appendChild(messageContainer);
-        document.body.appendChild(popup);
-        
-        // Hide after 5 seconds (after all animations complete)
-        setTimeout(() => {
-            popup.classList.add('hidden');
-            // Remove after animation completes
-            setTimeout(() => {
-                popup.remove();
-            }, 1000);
-        }, 5000);
-    }
 
     function init() {
         showWelcomePopup();

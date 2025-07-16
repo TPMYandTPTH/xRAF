@@ -43,7 +43,7 @@ const translations = {
         dashboardText: "Dashboard",
         clickHereText: "TP RAF",
         tpGlobal: "TP Global",
-termsContent: `
+        termsContent: `
 <h4>Refer a Friend Program Terms and Conditions</h4>
 <p>By participating in the TP (Teleperformance Malaysia Sdn Bhd.) Refer a Friend program, you agree to the following terms:</p>
 
@@ -76,7 +76,7 @@ termsContent: `
     <li><strong>Eligibility</strong>:
         <ul style="list-style-type: disc; margin-left: 20px;">
             <li>All referred candidates must meet the position's minimum qualifications.</li>
-            <li>Ex-TP employees will only be considered as valid referred candidates after a 12-month cooling-off period from their last working day at TP.</li>
+            <li>Referred candidates who have previously applied to TP or ex-TP employees will not be eligible for any bonus payout.</li>
             <li>Referrals must not be current TP Group employees (any country, including full-time, part-time, contract, or temporary staff).</li>
             <li>Internship/part-time role referrals are ineligible for bonuses.</li>
         </ul>
@@ -169,7 +169,7 @@ termsContent: `
             <li><strong>資格条件</strong>:
                 <ul style="list-style-type: disc; margin-left: 20px;">
                     <li>紹介された候補者は、職位の最低要件を満たす必要があります。</li>
-                    <li>元TP従業員は、TPでの最終勤務日から12ヶ月以上の冷却期間を経た後にのみ有効な被紹介者として認められます。</li>
+                    <li>TPに以前応募したことがある候補者、または元TP従業員である候補者は、いかなるボーナスの支払い対象にもなりません。</li>
                     <li>紹介対象者は、いかなる国のTPグループの現役従業員（正社員、パートタイム、契約社員、臨時スタッフを含む）であってはなりません。</li>
                     <li>インターンシップ・パートタイム職の紹介はボーナス対象外です。</li>
                 </ul>
@@ -180,7 +180,7 @@ termsContent: `
             <li>採用の可否はTPの裁量により決定されます。</li>
         </ol>
         <p style="font-size: 0.9em; color: #666; margin-top: 20px;">最終更新日: ${new Date().toLocaleDateString('ja-JP')}</p>
-        `,        
+        `,
         noJobError: "選択した条件に該当する仕事が見つかりません",
         loadError: "仕事のデータの読み込みに失敗しました。後ほど再度お試しください。"
     },
@@ -261,7 +261,7 @@ termsContent: `
             <li><strong>자격 요건</strong>:
                 <ul style="list-style-type: disc; margin-left: 20px;">
                     <li>추천된 후보자는 해당 직위의 최소 요건을 충족해야 합니다.</li>
-                    <li>전 TP 직원은 퇴사 후 12개월의 유예 기간이 지나야만 유효한 추천 후보자로 간주됩니다.</li>
+                    <li>TP에 이전에 지원한 적이 있는 추천 후보자 또는 전 TP 직원인 추천 후보자는 어떠한 보너스 지급 대상에도 해당되지 않습니다.</li>
                     <li>추천 대상자는 어떤 국가의 TP 그룹 현직 직원(정규직, 파트타임, 계약직, 임시직 포함)이 아니어야 합니다.</li>
                     <li>인턴/파트타임 직책 추천은 보너스 대상이 아닙니다.</li>
                 </ul>
@@ -272,7 +272,7 @@ termsContent: `
             <li>채용 결정은 TP의 재량에 따릅니다.</li>
         </ol>
         <p style="font-size: 0.9em; color: #666; margin-top: 20px;">최종 업데이트: ${new Date().toLocaleDateString('ko-KR')}</p>
-        `,        
+        `,
         noJobError: "선택한 기준에 맞는 직업을 찾을 수 없습니다",
         loadError: "작업 데이터를 로드하지 못했습니다. 나중에 다시 시도하십시오."
     },
@@ -353,7 +353,7 @@ termsContent: `
             <li><strong>资格条件</strong>:
                 <ul style="list-style-type: disc; margin-left: 20px;">
                     <li>所有被推荐人需满足该职位的最低要求。</li>
-                    <li>前TP员工需离职满12个月冷却期后，方可作为有效被推荐人。</li>
+                    <li>之前曾申请过TP的候选人，或前TP员工，将没有资格获得任何奖金支付。</li>
                     <li>被推荐人不得是任何国家TP集团的现任员工（含全职、兼职、合约或临时工）。</li>
                     <li>实习/兼职职位推荐无奖金资格。</li>
                 </ul>
@@ -364,7 +364,7 @@ termsContent: `
             <li>所有聘用决定由TP全权决定。</li>
         </ol>
         <p style="font-size: 0.9em; color: #666; margin-top: 20px;">最后更新: ${new Date().toLocaleDateString('zh-CN')}</p>
-        `,        
+        `,
         noJobError: "找不到符合所选条件的工作",
         loadError: "无法加载工作数据。请稍后再试。"
     },
@@ -445,7 +445,7 @@ termsContent: `
             <li><strong>資格要求</strong>:
                 <ul style="list-style-type: disc; margin-left: 20px;">
                     <li>所有被推薦人必須符合該職位嘅最低要求。</li>
-                    <li>前TP員工必須離職滿12個月冷靜期後，先可以成為有效被推薦人。</li>
+                    <li>之前曾申請過TP嘅候選人，或前TP員工，將冇資格獲得任何獎金支付。</li>
                     <li>被推薦人唔可以係任何國家TP集團嘅現職員工（包括全職、兼職、合約或臨時工）。</li>
                     <li>實習或兼職推薦無獎金。</li>
                 </ul>
@@ -456,7 +456,7 @@ termsContent: `
             <li>所有聘用決定由TP全權決定。</li>
         </ol>
         <p style="font-size: 0.9em; color: #666; margin-top: 20px;">最後更新: ${new Date().toLocaleDateString('zh-HK')}</p>
-        `,        
+        `,
         noJobError: "找不到符合所選條件的工作",
         loadError: "無法加載工作數據。請稍後再試。"
     }

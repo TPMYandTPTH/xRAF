@@ -7,6 +7,8 @@
     --white: #fff;
     --black: #212529;
     --section-bg: #f8f9fa;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
 }
 
 body {
@@ -14,9 +16,9 @@ body {
     background-color: var(--light-color);
     color: var(--black);
     line-height: 1.6;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -26,9 +28,284 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
-    padding-top: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Main Page Countdown Styles */
+.main-countdown-container {
+    margin: 25px 0 35px 0;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.8s ease-out 0.5s forwards;
+}
+
+.countdown-badge {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.12),
+        0 8px 15px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 420px;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1);
+}
+
+.countdown-badge:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 20px 45px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: #dee2e6;
+}
+
+.countdown-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+    transition: left 1s ease;
+}
+
+.countdown-badge:hover::before {
+    left: 100%;
+}
+
+.countdown-label {
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out 0.8s forwards;
+}
+
+.countdown-amount {
+    color: #e74c3c;
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin: 12px 0;
+    text-shadow: 
+        0 4px 12px rgba(231, 76, 60, 0.3),
+        0 2px 6px rgba(231, 76, 60, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleInBounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s forwards;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    position: relative;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(231, 76, 60, 0.3));
+}
+
+.countdown-amount::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(231, 76, 60, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.countdown-amount:hover::before {
+    opacity: 1;
+}
+
+.countdown-amount::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #e74c3c, transparent);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+}
+
+.countdown-amount.pulse {
+    animation: enhancedPulse 0.8s ease-in-out;
+}
+
+.countdown-amount.update-flash {
+    animation: flashUpdate 0.6s ease-out;
+}
+
+.countdown-urgency {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease-out 1.2s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.countdown-urgency::before {
+    content: '⚡';
+    animation: sparkle 2s ease-in-out infinite;
+}
+.countdown-urgency::after {
+    content: '⚡';
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Enhanced Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleInBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes enhancedPulse {
+    0% { 
+        transform: scale(1);
+        color: #e74c3c;
+    }
+    30% { 
+        transform: scale(1.08);
+        color: #c0392b;
+        text-shadow: 
+            0 0 8px #e74c3c,
+            0 0 15px #e74c3c,
+            0 0 25px #e74c3c,
+            0 0 35px #e74c3c,
+            0 0 45px #e74c3c;
+    }
+    100% { 
+        transform: scale(1);
+        color: #e74c3c;
+    }
+}
+
+@keyframes flashUpdate {
+    0% { 
+        transform: scale(1);
+        color: #e74c3c;
+    }
+    50% { 
+        transform: scale(1.12);
+        color: #fff;
+        background: rgba(231, 76, 60, 0.9);
+        border-radius: 8px;
+        padding: 4px 8px;
+    }
+    100% { 
+        transform: scale(1);
+        color: #e74c3c;
+        background: transparent;
+        padding: 0;
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% { 
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    50% { 
+        opacity: 0.7;
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+@keyframes flip {
+    0% { transform: rotateY(0); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pumping {
+    animation: pump 0.5s;
+}
+
+/* Fix body and html for footer gap */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    padding: 20px;
     margin: 0 auto;
     width: 100%;
 }
@@ -48,11 +325,19 @@ body {
     z-index: 9999;
     opacity: 1;
     transition: opacity 1s ease-out;
+    padding: 20px;
 }
 
 .welcome-popup.hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+.welcome-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    animation: flip 2s ease-in-out;
 }
 
 .welcome-countdown-container {
@@ -68,33 +353,30 @@ body {
 }
 
 .welcome-countdown-title {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #2c3e50;
     margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .welcome-money-countdown {
     font-size: 4rem;
     font-weight: bold;
-    color: #e63946;
+    color: #e74c3c;
     margin: 20px 0;
     transition: all 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 
+        0 4px 12px rgba(231, 76, 60, 0.3),
+        0 2px 6px rgba(231, 76, 60, 0.2);
 }
 
 .welcome-hurry-message {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #2c3e50;
     font-style: italic;
     animation: pulse 2s infinite;
-}
-
-.welcome-logo {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 30px;
-    animation: flip 2s ease-in-out;
 }
 
 .welcome-message-container {
@@ -102,6 +384,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .welcome-message-line {
@@ -146,16 +429,34 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .welcome-countdown-title {
-        font-size: 1.5rem;
+    .countdown-badge {
+        padding: 25px 30px;
+        max-width: 350px;
     }
     
-    .welcome-money-countdown {
-        font-size: 3rem;
+    .countdown-amount {
+        font-size: 2.6rem;
     }
     
-    .welcome-hurry-message {
-        font-size: 1.2rem;
+    .countdown-label {
+        font-size: 0.9rem;
+    }
+    
+    .countdown-urgency {
+        font-size: 0.85rem;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .logo {
+        max-width: 140px;
+    }
+    
+    #qr-code-canvas {
+        width: 180px;
+        height: 180px;
     }
     
     .welcome-logo {
@@ -163,26 +464,103 @@ body {
         height: 150px;
     }
     
-    .welcome-message-line {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .welcome-countdown-container {
-        padding: 15px;
-    }
-    
     .welcome-countdown-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .welcome-money-countdown {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     
     .welcome-hurry-message {
         font-size: 1rem;
+    }
+    
+    .welcome-message-line {
+        font-size: 1.2rem;
+    }
+    
+    .top-buttons-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .dashboard-btn-container,
+    .employee-login-container {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .employee-login-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .small-buttons-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .dashboard-btn-wrapper, 
+    .employee-login-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .countdown-badge {
+        padding: 20px 25px;
+        max-width: 320px;
+        margin: 0 15px;
+    }
+    
+    .countdown-amount {
+        font-size: 2.2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.85rem;
+    }
+    
+    .countdown-urgency {
+        font-size: 0.8rem;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    #qr-code-canvas {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .consent-box {
+        font-size: 14px;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    .section-box {
+        padding: 1rem;
     }
     
     .welcome-logo {
@@ -190,7 +568,31 @@ body {
         height: 120px;
     }
     
+    .welcome-countdown-container {
+        padding: 15px;
+    }
+    
+    .welcome-countdown-title {
+        font-size: 0.9rem;
+    }
+    
+    .welcome-money-countdown {
+        font-size: 2.5rem;
+    }
+    
+    .welcome-hurry-message {
+        font-size: 0.9rem;
+    }
+    
     .welcome-message-line {
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 1.5rem 0;
+    }
+    
+    footer p {
         font-size: 1rem;
     }
 }
@@ -479,69 +881,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.welcome-message-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.welcome-message-line {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.welcome-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 1s ease-out;
-}
-
-.welcome-popup.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.welcome-logo {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 30px;
-    animation: flip 2s ease-in-out;
-}
-
-@keyframes flip {
-    0% { transform: rotateY(0); }
-    50% { transform: rotateY(180deg); }
-    100% { transform: rotateY(360deg); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 .phone-hint {
     font-size: 0.8rem;
     color: #666;
@@ -561,6 +900,7 @@ footer {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    flex-shrink: 0;
 }
 
 footer .container {

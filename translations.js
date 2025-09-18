@@ -47,60 +47,65 @@ const translations = {
 <h4>Refer a Friend Program Terms and Conditions</h4>
 <p>By participating in the TP (Teleperformance Malaysia Sdn Bhd.) Refer a Friend program, you agree to the following terms:</p>
 
-<h5 style="margin-top: 16px;">Standard Roles — Bonus Structure</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<!-- One table with subtitles (sections) -->
+<div class="table-responsive">
+<table class="table table-striped table-bordered align-middle" style="width:100%; margin: 15px 0; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
   <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">Milestone</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">Bonus Amount</th>
+    <tr style="background-color:#f5f5f5;">
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd; white-space:nowrap;">Stage</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">Description</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd; white-space:nowrap;">Payout (RM)</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd; white-space:nowrap;">Applies To</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">Candidate passes the assessment</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM50</td>
+    <!-- Subtitle: Standard roles -->
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">Standard roles</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">Candidate completes probation (90 days)</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM750</td>
+    <tr>
+      <td style="padding:10px 15px;">Assessment Passed</td>
+      <td style="padding:10px 15px;">Candidate passes the assessment</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">50</td>
+      <td style="padding:10px 15px;">Standard roles</td>
     </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">Total (Standard)</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM800</td>
+    <tr>
+      <td style="padding:10px 15px;">Probation Completed (90 days)</td>
+      <td style="padding:10px 15px;">Candidate completes 90-day probation period</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">750</td>
+      <td style="padding:10px 15px;">Standard roles</td>
     </tr>
-  </tbody>
-</table>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">Total (Standard)</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">800</td>
+      <td style="padding:10px 15px;">Standard roles</td>
+    </tr>
 
-<h5 style="margin-top: 16px;">Interpreter (Work From Home) — Bonus Structure</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">Milestone</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">Bonus Amount</th>
+    <!-- Subtitle: Interpreter (WFH) -->
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">Interpreter (Work From Home)</td>
     </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">First day of work</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM2,000</td>
+    <tr class="table-active">
+      <td style="padding:10px 15px;">After 90 Days</td>
+      <td style="padding:10px 15px;">Candidate completes 90-day period</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">Interpreter (Work From Home)</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">After 90 days</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM3,000</td>
-    </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">Total (Interpreter WFH)</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM5,000</td>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">Total (Interpreter WFH)</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">Interpreter (Work From Home)</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 <ol>
   <li><strong>Payment</strong>:
     <ul style="list-style-type: disc; margin-left: 20px;">
       <li>Bonuses are paid via Touch 'n Go eWallet.</li>
       <li><strong>Standard roles:</strong> RM50 when the candidate passes the assessment, and RM750 after completing 90 days (<strong>total RM800</strong>).</li>
-      <li><strong>Interpreter (Work From Home):</strong> RM2,000 on the candidate's first working day, and RM3,000 after 90 days (<strong>total RM5,000</strong>).</li>
+      <li><strong>Interpreter (Work From Home):</strong> RM3,000 after completing 90 days (<strong>total RM3,000</strong>).</li>
     </ul>
   </li>
   <li><strong>Eligibility</strong>:
@@ -170,60 +175,62 @@ const translations = {
 <h4>友人紹介プログラムの利用規約</h4>
 <p>TP (Teleperformance Malaysia Sdn Bhd.)の「友人紹介プログラム」に参加することにより、以下の条件に同意するものとします：</p>
 
-<h5 style="margin-top: 16px;">標準職種 — ボーナス構成</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<div class="table-responsive">
+<table class="table table-striped table-bordered align-middle" style="width:100%; margin: 15px 0; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
   <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">達成基準</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">ボーナス額</th>
+    <tr style="background-color:#f5f5f5;">
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">ステージ</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">説明</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">支給額 (RM)</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">適用対象</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">候補者が審査を通過</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM50</td>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">標準職種</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">候補者が試用期間（90日）を完了</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM750</td>
+    <tr>
+      <td style="padding:10px 15px;">審査通過</td>
+      <td style="padding:10px 15px;">候補者が審査を通過</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">50</td>
+      <td style="padding:10px 15px;">標準職種</td>
     </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">合計（標準）</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM800</td>
+    <tr>
+      <td style="padding:10px 15px;">試用期間完了（90日）</td>
+      <td style="padding:10px 15px;">候補者が試用期間（90日）を完了</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">750</td>
+      <td style="padding:10px 15px;">標準職種</td>
     </tr>
-  </tbody>
-</table>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">合計（標準）</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">800</td>
+      <td style="padding:10px 15px;">標準職種</td>
+    </tr>
 
-<h5 style="margin-top: 16px;">在宅通訳（Interpreter, Work From Home）— ボーナス構成</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">達成基準</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">ボーナス額</th>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">在宅通訳（Interpreter, Work From Home）</td>
     </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">初出勤日</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM2,000</td>
+    <tr class="table-active">
+      <td style="padding:10px 15px;">90日後</td>
+      <td style="padding:10px 15px;">候補者が90日間を完了</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">在宅通訳</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">90日後</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM3,000</td>
-    </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">合計（在宅通訳）</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM5,000</td>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">合計（在宅通訳）</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">在宅通訳</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 <ol>
   <li><strong>支払い</strong>:
     <ul style="list-style-type: disc; margin-left: 20px;">
       <li>ボーナスはTouch 'n Go電子ウォレットで支払われます。</li>
       <li><strong>標準職種：</strong> 審査合格時RM50、90日完了後RM750（<strong>合計RM800</strong>）。</li>
-      <li><strong>在宅通訳：</strong> 初出勤日にRM2,000、90日後にRM3,000（<strong>合計RM5,000</strong>）。</li>
+      <li><strong>在宅通訳：</strong> 90日完了後にRM3,000（<strong>合計RM3,000</strong>）。</li>
     </ul>
   </li>
   <li><strong>資格条件</strong>:
@@ -293,74 +300,76 @@ const translations = {
 <h4>친구 추천 프로그램 약관</h4>
 <p>TP (Teleperformance Malaysia Sdn Bhd.)의 친구 추천 프로그램에 참여함으로써, 다음 약관에 동의합니다:</p>
 
-<h5 style="margin-top: 16px;">일반 직무 — 보너스 구조</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<div class="table-responsive">
+<table class="table table-striped table-bordered align-middle" style="width:100%; margin: 15px 0; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
   <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">단계</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">보너스 금액</th>
+    <tr style="background-color:#f5f5f5;">
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">단계</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">설명</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">지급액 (RM)</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">대상</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">후보자가 평가 통과</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM50</td>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">일반 직무</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">후보자가 수습 기간(90일) 완료</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM750</td>
+    <tr>
+      <td style="padding:10px 15px;">평가 통과</td>
+      <td style="padding:10px 15px;">후보자가 평가에 합격</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">50</td>
+      <td style="padding:10px 15px;">일반 직무</td>
     </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">합계 (일반)</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM800</td>
+    <tr>
+      <td style="padding:10px 15px;">수습 완료 (90일)</td>
+      <td style="padding:10px 15px;">후보자가 90일 수습 기간을 완료</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">750</td>
+      <td style="padding:10px 15px;">일반 직무</td>
     </tr>
-  </tbody>
-</table>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">합계 (일반)</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">800</td>
+      <td style="padding:10px 15px;">일반 직무</td>
+    </tr>
 
-<h5 style="margin-top: 16px;">통역사(재택 근무) — 보너스 구조</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">단계</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">보너스 금액</th>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">통역사 (재택 근무)</td>
     </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">첫 근무일</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM2,000</td>
+    <tr class="table-active">
+      <td style="padding:10px 15px;">90일 후</td>
+      <td style="padding:10px 15px;">후보자가 90일을 완료</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">통역사 (재택)</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">90일 후</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM3,000</td>
-    </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">합계 (통역사 재택)</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM5,000</td>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">합계 (통역사 재택)</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">통역사 (재택)</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 <ol>
   <li><strong>지급</strong>:
     <ul style="list-style-type: disc; margin-left: 20px;">
       <li>보너스는 Touch 'n Go 전자지갑으로 지급됩니다.</li>
       <li><strong>일반 직무:</strong> 평가 통과 시 RM50, 90일 완료 후 RM750 (<strong>총 RM800</strong>).</li>
-      <li><strong>통역사(재택 근무):</strong> 첫 근무일 RM2,000, 90일 후 RM3,000 (<strong>총 RM5,000</strong>).</li>
+      <li><strong>통역사(재택 근무):</strong> 90일 완료 후 RM3,000 (<strong>총 RM3,000</strong>).</li>
     </ul>
   </li>
   <li><strong>자격 요건</strong>:
     <ul style="list-style-type: disc; margin-left: 20px;">
       <li>추천 후보자는 해당 직무의 최소 요건을 충족해야 합니다.</li>
-      <li>TP에 이전 지원 이력 또는 전 TP 직원은 보너스 대상이 아닙니다.</li>
-      <li>추천 대상자는 어느 국가든 TP 그룹의 현직 직원(정규/파트/계약/임시)이면 안 됩니다.</li>
+      <li>TP에 이전 지원 이력 또는 전 TP 직원은 보너스 지급 대상에 해당되지 않습니다.</li>
+      <li>추천 대상은 어느 국가든 TP 그룹의 현직 직원(정규, 파트, 계약, 임시)이면 안 됩니다.</li>
       <li>인턴/파트타임 직무 추천은 보너스 대상이 아닙니다.</li>
     </ul>
   </li>
   <li>추천된 친구가 채용 목적의 정보 제공에 동의했음을 확인합니다.</li>
   <li>프로그램 운영을 위해 TP가 개인정보를 수집·이용하는 것에 동의합니다.</li>
-  <li>TP는 프로그램을 언제든지 변경 또는 종료할 수 있습니다.</li>
-  <li>채용 결정은 TP의 재량입니다.</li>
+  <li>TP는 본 프로그램을 언제든지 변경 또는 종료할 수 있습니다.</li>
+  <li>채용 결정은 TP의 재량입니다。</li>
 </ol>
 <p style="font-size: 0.9em; color: #666; margin-top: 20px;">최종 업데이트: ${new Date().toLocaleDateString('ko-KR')}</p>
 `,
@@ -416,60 +425,62 @@ const translations = {
 <h4>推荐朋友计划条款</h4>
 <p>参与TP (Teleperformance Malaysia Sdn Bhd.)的推荐朋友计划，即表示您同意以下条款：</p>
 
-<h5 style="margin-top: 16px;">标准岗位 — 奖金结构</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<div class="table-responsive">
+<table class="table table-striped table-bordered align-middle" style="width:100%; margin: 15px 0; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
   <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">阶段</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">奖金金额</th>
+    <tr style="background-color:#f5f5f5;">
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">阶段</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">说明</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">奖金 (RM)</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">适用对象</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">候选人通过评估</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM50</td>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">标准岗位</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">候选人完成试用期（90天）</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM750</td>
+    <tr>
+      <td style="padding:10px 15px;">通过评估</td>
+      <td style="padding:10px 15px;">候选人通过评估</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">50</td>
+      <td style="padding:10px 15px;">标准岗位</td>
     </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">合计（标准）</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM800</td>
+    <tr>
+      <td style="padding:10px 15px;">完成试用期（90天）</td>
+      <td style="padding:10px 15px;">候选人完成90天试用期</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">750</td>
+      <td style="padding:10px 15px;">标准岗位</td>
     </tr>
-  </tbody>
-</table>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">合计（标准）</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">800</td>
+      <td style="padding:10px 15px;">标准岗位</td>
+    </tr>
 
-<h5 style="margin-top: 16px;">在家办公口译（Interpreter, Work From Home）— 奖金结构</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">阶段</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">奖金金额</th>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">在家办公口译（Interpreter, Work From Home）</td>
     </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">入职第一天</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM2,000</td>
+    <tr class="table-active">
+      <td style="padding:10px 15px;">90天后</td>
+      <td style="padding:10px 15px;">候选人完成90天</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">在家办公口译</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">90天后</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM3,000</td>
-    </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">合计（在家口译）</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM5,000</td>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">合计（在家口译）</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">在家办公口译</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 <ol>
   <li><strong>支付</strong>:
     <ul style="list-style-type: disc; margin-left: 20px;">
       <li>奖金通过 Touch 'n Go 电子钱包发放。</li>
       <li><strong>标准岗位：</strong> 评估通过后RM50，完成90天后RM750（<strong>合计RM800</strong>）。</li>
-      <li><strong>在家办公口译：</strong> 入职第一天RM2,000，90天后RM3,000（<strong>合计RM5,000</strong>）。</li>
+      <li><strong>在家办公口译：</strong> 完成90天后RM3,000（<strong>合计RM3,000</strong>）。</li>
     </ul>
   </li>
   <li><strong>资格条件</strong>:
@@ -477,7 +488,7 @@ const translations = {
       <li>所有被推荐人需满足该职位的最低要求。</li>
       <li>之前曾申请过TP的候选人或前TP员工不具备任何奖金资格。</li>
       <li>被推荐人不得为任何国家TP集团现任员工（含全职、兼职、合约或临时）。</li>
-      <li>实习 / 兼职岗位不享受奖金。</li>
+      <li>实习/兼职职位不享受奖金。</li>
     </ul>
   </li>
   <li>您确认被推荐朋友同意TP为招聘目的使用其个人信息。</li>
@@ -539,60 +550,62 @@ const translations = {
 <h4>推薦朋友計劃條款</h4>
 <p>參與TP (Teleperformance Malaysia Sdn Bhd.) 嘅推薦朋友計劃，即代表你同意以下條款：</p>
 
-<h5 style="margin-top: 16px;">標準職位 — 獎金結構</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<div class="table-responsive">
+<table class="table table-striped table-bordered align-middle" style="width:100%; margin: 15px 0; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
   <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">階段</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">獎金金額</th>
+    <tr style="background-color:#f5f5f5;">
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">階段</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">說明</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">獎金 (RM)</th>
+      <th style="padding:12px 15px; border-bottom:2px solid #ddd;">適用對象</th>
     </tr>
   </thead>
   <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">候選人通過評估</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM50</td>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">標準職位</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">候選人完成試用期（90日）</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM750</td>
+    <tr>
+      <td style="padding:10px 15px;">通過評估</td>
+      <td style="padding:10px 15px;">候選人通過評估</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">50</td>
+      <td style="padding:10px 15px;">標準職位</td>
     </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">合計（標準）</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM800</td>
+    <tr>
+      <td style="padding:10px 15px;">完成試用期（90日）</td>
+      <td style="padding:10px 15px;">候選人完成90日試用期</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">750</td>
+      <td style="padding:10px 15px;">標準職位</td>
     </tr>
-  </tbody>
-</table>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">合計（標準）</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">800</td>
+      <td style="padding:10px 15px;">標準職位</td>
+    </tr>
 
-<h5 style="margin-top: 16px;">在家工作口譯（Interpreter, Work From Home）— 獎金結構</h5>
-<table border="0" style="width: 100%; margin: 10px 0 15px; border-collapse: collapse; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <thead>
-    <tr style="background-color: #f5f5f5;">
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">階段</th>
-      <th style="padding: 12px 15px; text-align: left; border-bottom: 2px solid #ddd;">獎金金額</th>
+    <tr class="table-secondary">
+      <td colspan="4" class="fw-bold" style="padding:10px 15px;">在家工作口譯（Interpreter, Work From Home）</td>
     </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">首個上班日</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM2,000</td>
+    <tr class="table-active">
+      <td style="padding:10px 15px;">90日後</td>
+      <td style="padding:10px 15px;">候選人完成90日</td>
+      <td style="padding:10px 15px; font-weight:bold; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">在家工作口譯</td>
     </tr>
-    <tr style="border-bottom: 1px solid #eee;">
-      <td style="padding: 10px 15px;">90日後</td>
-      <td style="padding: 10px 15px; font-weight: bold; color: #2a6496;">RM3,000</td>
-    </tr>
-    <tr style="background:#fafafa;">
-      <td style="padding: 10px 15px; font-weight: 600;">合計（在家口譯）</td>
-      <td style="padding: 10px 15px; font-weight: 800; color: #2a6496;">RM5,000</td>
+    <tr class="table-light fw-bold">
+      <td colspan="2" style="padding:10px 15px;">合計（在家口譯）</td>
+      <td style="padding:10px 15px; font-weight:800; color:#2a6496;">3,000</td>
+      <td style="padding:10px 15px;">在家工作口譯</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 <ol>
   <li><strong>支付方式</strong>:
     <ul style="list-style-type: disc; margin-left: 20px;">
       <li>獎金會透過 Touch 'n Go 電子錢包發放。</li>
       <li><strong>標準職位：</strong> 通過評估後RM50，完成90日後RM750（<strong>合計RM800</strong>）。</li>
-      <li><strong>在家工作口譯：</strong> 首個上班日RM2,000，90日後RM3,000（<strong>合計RM5,000</strong>）。</li>
+      <li><strong>在家工作口譯：</strong> 完成90日後RM3,000（<strong>合計RM3,000</strong>）。</li>
     </ul>
   </li>
   <li><strong>資格要求</strong>:

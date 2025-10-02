@@ -235,6 +235,40 @@ document.addEventListener('DOMContentLoaded', function() {
         select.appendChild(option);
     }
 
+    // NEW FUNCTION: Update locations based on selected language
+    function updateLocationsByLanguage() {
+        const selectedLanguage = elements.jobLangSelect.value;
+        
+        // Clear current location selection
+        elements.locationSelect.value = '';
+        elements.locationSelect.classList.remove('is-invalid');
+        
+        if (!selectedLanguage) {
+            // If no language selected, show all locations
+            const locations = [...new Set(jobData.map(job => job.Location))];
+            elements.locationSelect.innerHTML = '';
+            addOption(elements.locationSelect, '', translations[currentLanguage].selectOption, true, true);
+            locations.forEach(loc => {
+                addOption(elements.locationSelect, loc, loc);
+            });
+            return;
+        }
+        
+        // Filter locations that have jobs for the selected language
+        const availableLocations = [...new Set(
+            jobData
+                .filter(job => job.Language === selectedLanguage)
+                .map(job => job.Location)
+        )];
+        
+        // Repopulate location dropdown with filtered locations
+        elements.locationSelect.innerHTML = '';
+        addOption(elements.locationSelect, '', translations[currentLanguage].selectOption, true, true);
+        availableLocations.forEach(loc => {
+            addOption(elements.locationSelect, loc, loc);
+        });
+    }
+
     function updatePageContent() {
         const translation = translations[currentLanguage] || translations.en;
         
@@ -370,7 +404,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         }
         
-        alert(translations[currentLanguage].noJobError);
+        // This should never happen with the new filtering, but keep as safety
+        console.error('No matching job found');
         return false;
     }
 
@@ -478,7 +513,13 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.fullName.addEventListener('input', validateForm);
         elements.phoneNumber.addEventListener('input', validateForm);
         elements.email.addEventListener('input', validateForm);
-        elements.jobLangSelect.addEventListener('change', validateForm);
+        
+        // UPDATED: Add location filtering when job language changes
+        elements.jobLangSelect.addEventListener('change', function() {
+            updateLocationsByLanguage();
+            validateForm();
+        });
+        
         elements.locationSelect.addEventListener('change', validateForm);
         elements.consentCheckbox.addEventListener('change', validateForm);
         

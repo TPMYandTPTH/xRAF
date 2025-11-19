@@ -1880,8 +1880,6 @@ const translations = {
     color: #3498db;
 }
 
-/* Replace these bonus card styles in the <style> section of each language */
-
 .bonus-card {
     border-radius: 12px;
     padding: 20px;
@@ -1902,20 +1900,10 @@ const translations = {
 
 .bonus-card.standard-bonus {
     background: #5B6BC9;
-    /* Alternative solid colors you can try:
-    background: #4A5FC1; - Deeper blue
-    background: #6366F1; - Indigo
-    background: #3B82F6; - Bright blue
-    */
 }
 
 .bonus-card.interpreter-bonus {
     background: #E74C9C;
-    /* Alternative solid colors you can try:
-    background: #EC4899; - Pink
-    background: #F43F5E; - Rose
-    background: #EF4444; - Red
-    */
 }
 
 .bonus-header {
@@ -2016,6 +2004,7 @@ const translations = {
         0 3px 6px rgba(0,0,0,0.4),
         0 1px 3px rgba(0,0,0,0.3);
 }
+
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);

@@ -1899,11 +1899,11 @@ const translations = {
 }
 
 .bonus-card.standard-bonus {
-    background: #1E3A8A; /* Deep navy blue - professional & trustworthy */
+    background: #334155; /* Slate gray-blue - very corporate */
 }
 
 .bonus-card.interpreter-bonus {
-    background: #9F1239; /* Deep burgundy/wine - sophisticated & premium */
+    background: #701A75; /* Deep plum - elegant & refined */
 }
 
 .bonus-header {

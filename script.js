@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Main page countdown configuration
     const mainCountdownConfig = {
-        startAmount: 20000,
-        endAmount: 20000,
-        duration: 30000,
-        updateInterval: 2000
+        startAmount: 0,
+        endAmount: 500,
+        duration: 3000,
+        updateInterval: 10
     };
 
     // Create phone hint element
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Start the countdown animation in popup only
         const moneyElement = document.getElementById('welcomeMoneyCountdown');
-        const startAmount = 30000;
-        const endAmount = 20000;
+        const startAmount = 0;
+        const endAmount = 500;
         let currentAmount = startAmount;
         const duration = 3000;
         const startTime = Date.now();

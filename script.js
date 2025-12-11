@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startAmount: 0,
         endAmount: 500,
         duration: 3000,
-        updateInterval: 10
+        updateInterval: 1
     };
 
     // Create phone hint element
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const startAmount = 0.0;
         const endAmount = 500.00;
         let currentAmount = startAmount;
-        const duration = 300;
+        const duration = 3000;
         const startTime = Date.now();
         
         function updateCountdown() {

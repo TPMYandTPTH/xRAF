@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Main page countdown configuration
     const mainCountdownConfig = {
         startAmount: 20000,
-        endAmount: 20000, // Keep it at 20000
-        duration: 30000, // 30 seconds for subtle countdown
-        updateInterval: 2000 // Update every 2 seconds
+        endAmount: 20000,
+        duration: 30000,
+        updateInterval: 2000
     };
 
     // Create phone hint element
@@ -45,8 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startMainCountdown() {
-        // No countdown on main page - just keep it static at RM20,000
-        // Only add occasional visual pulse effects to make it look alive
         function addVisualEffects() {
             elements.mainCountdownAmount.classList.add('pulse');
             
@@ -54,11 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 elements.mainCountdownAmount.classList.remove('pulse');
             }, 800);
             
-            // Repeat visual effects every 8 seconds
             setTimeout(addVisualEffects, 8000);
         }
         
-        // Start the visual effects after a short delay
         setTimeout(addVisualEffects, 5000);
     }
 
@@ -71,6 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.src = 'TPLogo11.png';
         logo.alt = 'Teleperformance Logo';
         logo.className = 'welcome-logo';
+        
+        // TP in Johor big text
+        const johorTitle = document.createElement('div');
+        johorTitle.className = 'welcome-johor-title';
+        johorTitle.innerHTML = 'TP in <span class="johor-highlight">Johor</span>';
         
         // Create money countdown container
         const countdownContainer = document.createElement('div');
@@ -97,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageContainer = document.createElement('div');
         messageContainer.className = 'welcome-message-container';
         
-        // Get welcome message in all languages
         const welcomeMessages = [
             translations.en.welcomeMessage,
             translations.ja.welcomeMessage,
@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
             translations['zh-HK'].welcomeMessage
         ];
         
-        // Create a div for each language's welcome message
         welcomeMessages.forEach((msg, index) => {
             const message = document.createElement('div');
             message.className = 'welcome-message-line';
@@ -116,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         popup.appendChild(logo);
+        popup.appendChild(johorTitle);
         popup.appendChild(countdownContainer);
         popup.appendChild(messageContainer);
         document.body.appendChild(popup);
@@ -125,27 +125,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const startAmount = 30000;
         const endAmount = 20000;
         let currentAmount = startAmount;
-        const duration = 3000; // 3 seconds
+        const duration = 3000;
         const startTime = Date.now();
         
         function updateCountdown() {
             const elapsed = Date.now() - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Ease-out function to slow down at the end
             const easedProgress = 1 - Math.pow(1 - progress, 3);
             
             currentAmount = startAmount - (startAmount - endAmount) * easedProgress;
             
             moneyElement.textContent = formatMoney(currentAmount);
             
-            // Add pumping effect
             moneyElement.classList.add('pumping');
             setTimeout(() => {
                 moneyElement.classList.remove('pumping');
             }, 500);
             
-            // Randomly change the hurry message
             if (Math.random() < 0.02) {
                 const hurryMessages = [
                     "Hurry! The rewards are disappearing fast! 🚀",
@@ -160,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (progress < 1) {
                 requestAnimationFrame(updateCountdown);
             } else {
-                // Final message when countdown completes
                 const finalMessages = [
                     "Last chance to claim your rewards!",
                     "Time's almost up! Don't miss out!",
@@ -171,13 +167,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Start the countdown
         updateCountdown();
         
         // Hide after 5 seconds
         setTimeout(() => {
             popup.classList.add('hidden');
-            // Remove after animation completes and start main countdown
             setTimeout(() => {
                 popup.remove();
                 startMainCountdown();
@@ -202,6 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 jobData = data;
                 populateJobDropdowns();
+                // Set default values after data is loaded
+                setDefaultValues();
             })
             .catch(error => {
                 console.error('Error loading job data:', error);
@@ -235,16 +231,29 @@ document.addEventListener('DOMContentLoaded', function() {
         select.appendChild(option);
     }
 
-    // NEW FUNCTION: Update locations based on selected language
+    // NEW FUNCTION: Set default values to Mandarin and Johor
+    function setDefaultValues() {
+        // Set Job Language to Mandarin
+        elements.jobLangSelect.value = 'Mandarin';
+        
+        // Update locations based on Mandarin selection
+        updateLocationsByLanguage();
+        
+        // Set Working Location to Johor
+        elements.locationSelect.value = 'Johor';
+        
+        // Validate form after setting defaults
+        validateForm();
+    }
+
+    // Update locations based on selected language
     function updateLocationsByLanguage() {
         const selectedLanguage = elements.jobLangSelect.value;
         
-        // Clear current location selection
         elements.locationSelect.value = '';
         elements.locationSelect.classList.remove('is-invalid');
         
         if (!selectedLanguage) {
-            // If no language selected, show all locations
             const locations = [...new Set(jobData.map(job => job.Location))];
             elements.locationSelect.innerHTML = '';
             addOption(elements.locationSelect, '', translations[currentLanguage].selectOption, true, true);
@@ -254,14 +263,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Filter locations that have jobs for the selected language
         const availableLocations = [...new Set(
             jobData
                 .filter(job => job.Language === selectedLanguage)
                 .map(job => job.Location)
         )];
         
-        // Repopulate location dropdown with filtered locations
         elements.locationSelect.innerHTML = '';
         addOption(elements.locationSelect, '', translations[currentLanguage].selectOption, true, true);
         availableLocations.forEach(loc => {
@@ -292,10 +299,11 @@ document.addEventListener('DOMContentLoaded', function() {
             elements.termsContent.innerHTML = translation.termsContent;
         }
         
-        // Update phone hint message
         phoneHint.textContent = translation.phoneHint;
         
         populateJobDropdowns();
+        // Re-apply default values after language change
+        setDefaultValues();
     }
 
     function changeLanguage() {
@@ -305,10 +313,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Phone number validation - only allow numbers
     elements.phoneNumber.addEventListener('input', function() {
-        // Remove any non-digit characters
         this.value = this.value.replace(/[^\d]/g, '');
         
-        // Show TnG hint when user starts typing
         if (this.value.length > 0) {
             phoneHint.style.display = 'block';
         } else {
@@ -404,7 +410,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         }
         
-        // This should never happen with the new filtering, but keep as safety
         console.error('No matching job found');
         return false;
     }
@@ -428,7 +433,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const container = document.createElement('div');
         container.className = 'social-media-container';
 
-        // Always show all social media sections regardless of location
         const sections = [
             { title: translations[currentLanguage].tpGlobal || 'TP Global', links: locationSocialLinks.global },
             { title: translations[currentLanguage].followMalaysia || 'TP Malaysia', links: locationSocialLinks.malaysia },
@@ -514,7 +518,6 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.phoneNumber.addEventListener('input', validateForm);
         elements.email.addEventListener('input', validateForm);
         
-        // UPDATED: Add location filtering when job language changes
         elements.jobLangSelect.addEventListener('change', function() {
             updateLocationsByLanguage();
             validateForm();

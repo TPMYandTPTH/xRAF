@@ -12,19 +12,15 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         
-        // Replace 'GA_MEASUREMENT_ID' with your actual Google Analytics 4 Measurement ID
         gtag('config', 'G-T9F5KMVVY8', {
-            // Enhanced measurement for better tracking
             send_page_view: true,
             allow_google_signals: true,
             allow_ad_personalization_signals: true,
-            // Custom parameters
             custom_map: {
                 'custom_parameter_1': 'referral_program'
             }
         });
         
-        // Custom event tracking function for xRAF specific events
         function trackCustomEvent(eventName, parameters = {}) {
             gtag('event', eventName, {
                 event_category: 'xRAF_Program',
@@ -33,12 +29,10 @@
             });
         }
         
-        // Track page engagement
         function trackPageEngagement() {
             let startTime = Date.now();
             let maxScroll = 0;
             
-            // Track scroll depth
             window.addEventListener('scroll', function() {
                 let scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
                 if (scrollPercent > maxScroll) {
@@ -46,7 +40,6 @@
                 }
             });
             
-            // Track time on page when user leaves
             window.addEventListener('beforeunload', function() {
                 let timeSpent = Math.round((Date.now() - startTime) / 1000);
                 gtag('event', 'page_engagement', {
@@ -58,7 +51,6 @@
             });
         }
         
-        // Initialize engagement tracking when page loads
         document.addEventListener('DOMContentLoaded', trackPageEngagement);
     </script>
     
@@ -285,178 +277,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Load translations first, then the main script -->
     <script src="translations.js"></script>
     <script src="script.js"></script>
-    
-    <!-- Enhanced Analytics Script for xRAF -->
-    <script>
-        // Enhanced analytics for xRAF program
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track language selection
-            const langSelect = document.getElementById('page-lang-select');
-            if (langSelect) {
-                langSelect.addEventListener('change', function() {
-                    trackCustomEvent('language_change', {
-                        custom_parameter_language: this.value,
-                        custom_parameter_action: 'language_selection'
-                    });
-                });
-            }
-            
-            // Track form interactions
-            const formFields = ['full-name', 'phone-number', 'email', 'job-lang-select', 'location-select'];
-            formFields.forEach(fieldId => {
-                const field = document.getElementById(fieldId);
-                if (field) {
-                    field.addEventListener('focus', function() {
-                        trackCustomEvent('form_field_focus', {
-                            custom_parameter_field: fieldId,
-                            non_interaction: true
-                        });
-                    });
-                    
-                    field.addEventListener('blur', function() {
-                        if (this.value) {
-                            trackCustomEvent('form_field_complete', {
-                                custom_parameter_field: fieldId,
-                                non_interaction: true
-                            });
-                        }
-                    });
-                }
-            });
-            
-            // Track consent checkbox
-            const consentCheckbox = document.getElementById('consent-checkbox');
-            if (consentCheckbox) {
-                consentCheckbox.addEventListener('change', function() {
-                    trackCustomEvent('consent_checkbox', {
-                        custom_parameter_consent_given: this.checked,
-                        custom_parameter_action: 'consent_interaction'
-                    });
-                });
-            }
-            
-            // Track submit button clicks
-            const submitBtn = document.getElementById('next-btn');
-            if (submitBtn) {
-                submitBtn.addEventListener('click', function() {
-                    const jobLang = document.getElementById('job-lang-select').value;
-                    const location = document.getElementById('location-select').value;
-                    
-                    trackCustomEvent('referral_submission', {
-                        custom_parameter_job_language: jobLang,
-                        custom_parameter_location: location,
-                        custom_parameter_action: 'form_submit'
-                    });
-                });
-            }
-            
-            // Track copy link action
-            const copyBtn = document.getElementById('copy-btn');
-            if (copyBtn) {
-                copyBtn.addEventListener('click', function() {
-                    trackCustomEvent('referral_link_copy', {
-                        custom_parameter_action: 'copy_link'
-                    });
-                });
-            }
-            
-            // Track QR code visibility
-            const qrCodeCanvas = document.getElementById('qr-code-canvas');
-            if (qrCodeCanvas) {
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            trackCustomEvent('qr_code_view', {
-                                custom_parameter_action: 'qr_code_visible',
-                                non_interaction: true
-                            });
-                        }
-                    });
-                });
-                observer.observe(qrCodeCanvas);
-            }
-            
-            // Track modal interactions
-            const termsModal = document.getElementById('termsModal');
-            if (termsModal) {
-                termsModal.addEventListener('shown.bs.modal', function() {
-                    trackCustomEvent('terms_modal_view', {
-                        custom_parameter_action: 'terms_opened'
-                    });
-                });
-                
-                termsModal.addEventListener('hidden.bs.modal', function() {
-                    trackCustomEvent('terms_modal_close', {
-                        custom_parameter_action: 'terms_closed'
-                    });
-                });
-            }
-            
-            // Track step navigation
-            const backBtn = document.getElementById('back-btn');
-            if (backBtn) {
-                backBtn.addEventListener('click', function() {
-                    trackCustomEvent('step_navigation', {
-                        custom_parameter_direction: 'back_to_step1',
-                        custom_parameter_action: 'navigation'
-                    });
-                });
-            }
-            
-            // Track welcome popup interaction (after it's created)
-            setTimeout(function() {
-                const welcomePopup = document.querySelector('.welcome-popup');
-                if (welcomePopup) {
-                    trackCustomEvent('welcome_popup_shown', {
-                        custom_parameter_action: 'popup_display',
-                        non_interaction: true
-                    });
-                }
-            }, 1000);
-        });
-        
-        // Override the updateShareButtons function to add analytics
-        const originalUpdateShareButtons = window.updateShareButtons;
-        if (typeof originalUpdateShareButtons === 'function') {
-            window.updateShareButtons = function() {
-                originalUpdateShareButtons.apply(this, arguments);
-                
-                // Add analytics to share buttons
-                const shareWhatsapp = document.getElementById('share-whatsapp');
-                const shareLine = document.getElementById('share-line');
-                const shareFacebook = document.getElementById('share-facebook');
-                
-                if (shareWhatsapp) {
-                    shareWhatsapp.addEventListener('click', function() {
-                        trackCustomEvent('referral_share', {
-                            custom_parameter_platform: 'whatsapp',
-                            custom_parameter_action: 'share_click'
-                        });
-                    });
-                }
-                
-                if (shareLine) {
-                    shareLine.addEventListener('click', function() {
-                        trackCustomEvent('referral_share', {
-                            custom_parameter_platform: 'line',
-                            custom_parameter_action: 'share_click'
-                        });
-                    });
-                }
-                
-                if (shareFacebook) {
-                    shareFacebook.addEventListener('click', function() {
-                        trackCustomEvent('referral_share', {
-                            custom_parameter_platform: 'facebook',
-                            custom_parameter_action: 'share_click'
-                        });
-                    });
-                }
-            };
-        }
-    </script>
 </body>
 </html>

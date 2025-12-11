@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.alt = 'Teleperformance Logo';
         logo.className = 'welcome-logo';
         
-        // TP in Johor big text
+        // "Now In Johor" big text - CHANGED FROM "TP in Johor"
         const johorTitle = document.createElement('div');
         johorTitle.className = 'welcome-johor-title';
-        johorTitle.innerHTML = 'TP in <span class="johor-highlight">Johor</span>';
+        johorTitle.innerHTML = 'Now In <span class="johor-highlight">Johor</span>';
         
         // Create money countdown container
         const countdownContainer = document.createElement('div');
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         select.appendChild(option);
     }
 
-    // NEW FUNCTION: Set default values to Mandarin and Johor
+    // Set default values to Mandarin and Johor
     function setDefaultValues() {
         // Set Job Language to Mandarin
         elements.jobLangSelect.value = 'Mandarin';

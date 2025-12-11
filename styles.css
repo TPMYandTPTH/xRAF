@@ -9,10 +9,21 @@
     --section-bg: #f8f9fa;
     --success-color: #28a745;
     --warning-color: #ffc107;
-    /* Malaysia flag colors */
-    --malaysia-yellow: #ff5c00;
-    --malaysia-blue: #010066;
-    --malaysia-red: #CC0001;
+    
+    /* TP Brand Colors - Solid Only */
+    --tp-orange: #ff5c00;
+    --tp-blue: #3047b0;
+    --tp-turquoise: #00af9b;
+    --tp-green-flash: #00d769;
+    --tp-green-light: #84c98b;
+    --tp-yellow: #f5d200;
+    --tp-burgundy: #5f365e;
+    --tp-carmine: #ab2c37;
+    
+    /* Border radius - Edgy/Rounded */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 14px;
 }
 
 body {
@@ -39,7 +50,7 @@ body {
     width: 100%;
 }
 
-/* Main Page Countdown Styles */
+/* Main Page Countdown Styles - SOLID COLORS */
 .main-countdown-container {
     margin: 25px 0 35px 0;
     display: flex;
@@ -50,45 +61,22 @@ body {
 }
 
 .countdown-badge {
-    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    background: #ffffff;
     border: 2px solid #e9ecef;
-    border-radius: 20px;
+    border-radius: var(--border-radius-lg);
     padding: 30px 40px;
-    box-shadow: 
-        0 15px 35px rgba(0, 0, 0, 0.12),
-        0 8px 15px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     text-align: center;
     position: relative;
     overflow: hidden;
     max-width: 420px;
     width: 100%;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: scale(1);
 }
 
 .countdown-badge:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 
-        0 20px 45px rgba(0, 0, 0, 0.15),
-        0 10px 20px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    border-color: #dee2e6;
-}
-
-.countdown-badge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-    transition: left 1s ease;
-}
-
-.countdown-badge:hover::before {
-    left: 100%;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
 .countdown-label {
@@ -108,23 +96,15 @@ body {
     font-size: 3.2rem;
     font-weight: 900;
     margin: 12px 0;
-    text-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.2),
-        0 2px 6px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
     opacity: 0;
     transform: scale(0.8);
     animation: scaleInBounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s forwards;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    position: relative;
 }
 
 .countdown-amount.pulse {
     animation: enhancedPulse 0.8s ease-in-out;
-}
-
-.countdown-amount.update-flash {
-    animation: flashUpdate 0.6s ease-out;
 }
 
 .countdown-urgency {
@@ -135,97 +115,28 @@ body {
     opacity: 0;
     transform: translateY(10px);
     animation: fadeInUp 0.6s ease-out 1.2s forwards;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
 }
 
-.countdown-urgency::before {
-    content: '⚡';
-    animation: sparkle 2s ease-in-out infinite;
-}
-.countdown-urgency::after {
-    content: '⚡';
-    animation: sparkle 2s ease-in-out infinite;
-}
-
-/* Enhanced Animations */
+/* Animations */
 @keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scaleInBounce {
-    0% {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    60% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.3); }
+    60% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes enhancedPulse {
-    0% { 
-        transform: scale(1);
-    }
-    30% { 
-        transform: scale(1.08);
-        text-shadow: 
-            0 0 8px rgba(0,0,0,0.3),
-            0 0 15px rgba(0,0,0,0.2);
-    }
-    100% { 
-        transform: scale(1);
-    }
-}
-
-@keyframes flashUpdate {
-    0% { 
-        transform: scale(1);
-    }
-    50% { 
-        transform: scale(1.12);
-        background: rgba(0, 0, 0, 0.9);
-        color: #fff;
-        border-radius: 8px;
-        padding: 4px 8px;
-    }
-    100% { 
-        transform: scale(1);
-        background: transparent;
-        padding: 0;
-    }
-}
-
-@keyframes sparkle {
-    0%, 100% { 
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
-    50% { 
-        opacity: 0.7;
-        transform: scale(1.2) rotate(180deg);
-    }
+    0% { transform: scale(1); }
+    30% { transform: scale(1.08); }
+    100% { transform: scale(1); }
 }
 
 @keyframes flip {
@@ -250,26 +161,13 @@ body {
     animation: pump 0.5s;
 }
 
-/* Fix body and html for footer gap */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    max-width: 600px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    padding: 20px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* Welcome Popup with Countdown */
+/* Welcome Popup - SOLID COLORS */
 .welcome-popup {
     position: fixed;
     top: 0;
@@ -299,7 +197,7 @@ html, body {
     animation: flip 2s ease-in-out;
 }
 
-/* TP in Johor Title - Mobile Friendly */
+/* Now In Johor Title */
 .welcome-johor-title {
     font-size: clamp(2.5rem, 10vw, 5rem);
     font-weight: 900;
@@ -312,7 +210,7 @@ html, body {
 }
 
 .johor-highlight {
-    color: var(--malaysia-yellow);
+    color: var(--tp-orange);
     text-shadow: 
         2px 2px 0 var(--dark-color),
         -1px -1px 0 var(--dark-color),
@@ -322,14 +220,15 @@ html, body {
     font-size: clamp(3rem, 12vw, 6rem);
 }
 
+/* Welcome Countdown - SOLID BLACK (no gradient) */
 .welcome-countdown-container {
     text-align: center;
     margin-bottom: 20px;
     padding: 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
-    border-radius: 12px;
+    background: var(--dark-color);
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 3px solid var(--malaysia-yellow);
+    border: 3px solid var(--tp-orange);
     max-width: 90%;
     width: 500px;
 }
@@ -346,12 +245,9 @@ html, body {
 .welcome-money-countdown {
     font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: bold;
-    color: var(--malaysia-yellow);
+    color: var(--tp-orange);
     margin: 15px 0;
     transition: all 0.3s ease;
-    text-shadow: 
-        0 4px 12px rgba(255, 215, 0, 0.4),
-        0 2px 6px rgba(255, 215, 0, 0.3);
 }
 
 .welcome-hurry-message {
@@ -379,161 +275,7 @@ html, body {
     animation: fadeInUp 0.5s ease-out forwards;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .countdown-badge {
-        padding: 25px 30px;
-        max-width: 350px;
-    }
-    
-    .countdown-amount {
-        font-size: 2.6rem;
-    }
-    
-    .countdown-label {
-        font-size: 0.9rem;
-    }
-    
-    .countdown-urgency {
-        font-size: 0.85rem;
-    }
-    
-    .container {
-        padding: 20px;
-    }
-    
-    .logo {
-        max-width: 140px;
-    }
-    
-    #qr-code-canvas {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .welcome-logo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .welcome-countdown-title {
-        font-size: 0.9rem;
-    }
-    
-    .welcome-hurry-message {
-        font-size: 0.9rem;
-    }
-    
-    .top-buttons-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .dashboard-btn-container,
-    .employee-login-container {
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .employee-login-container {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    footer .row {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    .small-buttons-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .dashboard-btn-wrapper, 
-    .employee-login-wrapper {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .countdown-badge {
-        padding: 20px 25px;
-        max-width: 320px;
-        margin: 0 15px;
-    }
-    
-    .countdown-amount {
-        font-size: 2.2rem;
-    }
-    
-    .countdown-label {
-        font-size: 0.85rem;
-    }
-    
-    .countdown-urgency {
-        font-size: 0.8rem;
-    }
-    
-    .container {
-        padding: 15px;
-    }
-    
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-    }
-    
-    #qr-code-canvas {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .consent-box {
-        font-size: 14px;
-    }
-    
-    .modal-dialog {
-        margin: 0.5rem;
-    }
-    
-    .section-box {
-        padding: 1rem;
-    }
-    
-    .welcome-logo {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .welcome-countdown-container {
-        padding: 15px;
-        width: 95%;
-    }
-    
-    .welcome-countdown-title {
-        font-size: 0.85rem;
-    }
-    
-    .welcome-hurry-message {
-        font-size: 0.85rem;
-    }
-    
-    footer {
-        padding: 1.5rem 0;
-    }
-    
-    footer p {
-        font-size: 1rem;
-    }
-}
-
+/* Logo */
 .logo {
     max-width: 180px;
     height: auto;
@@ -547,9 +289,10 @@ html, body {
     transform: scale(1.05);
 }
 
+/* Card */
 .card {
     border: none;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -559,10 +302,11 @@ html, body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Section Box */
 .section-box {
     background-color: var(--section-bg);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
@@ -573,10 +317,11 @@ html, body {
     border-bottom: 2px solid var(--dark-color);
 }
 
+/* Forms */
 .form-control, .form-select {
     padding: 12px 15px;
     border: 2px solid #e9ecef;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     transition: all 0.3s ease;
 }
 
@@ -585,9 +330,10 @@ html, body {
     box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.15);
 }
 
+/* Buttons */
 .btn {
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -611,9 +357,20 @@ html, body {
     transform: none;
 }
 
+.btn-success {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+.btn-success:hover {
+    background-color: #333;
+}
+
+/* Consent Box */
 .consent-box {
     background-color: rgba(248, 249, 250, 0.5);
     transition: all 0.3s ease;
+    border-radius: var(--border-radius-sm);
 }
 
 .consent-box:hover {
@@ -621,6 +378,7 @@ html, body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Social Media */
 .social-media-container {
     display: flex;
     flex-direction: column;
@@ -673,34 +431,29 @@ html, body {
     transform: translateY(-3px) scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    background-color: var(--malaysia-yellow);
+    background-color: var(--tp-orange);
     color: var(--dark-color);
 }
 
+/* QR Code */
 #qr-code-canvas {
     width: 200px;
     height: 200px;
     padding: 10px;
     background: white;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--dark-color);
 }
 
+/* Input Group */
 .input-group {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     overflow: hidden;
 }
 
-.input-group input {
-    border-right: none;
-}
-
-.input-group button {
-    border-left: none;
-}
-
+/* Validation */
 .is-invalid {
     border-color: #dc3545 !important;
 }
@@ -717,30 +470,9 @@ html, body {
     color: #dc3545;
 }
 
-.form-check-input.is-invalid {
-    border-color: #dc3545;
-}
-
-.form-check-input.is-invalid ~ .form-check-label {
-    color: #dc3545;
-}
-
-.btn-success {
-    background-color: var(--dark-color);
-    border-color: var(--dark-color);
-}
-
-.btn-success:hover {
-    background-color: #333;
-}
-
-.btn-primary {
-    background-color: var(--dark-color);
-    border-color: var(--dark-color);
-}
-
+/* Modal */
 .modal-content {
-    border-radius: 12px;
+    border-radius: var(--border-radius);
 }
 
 .modal-header {
@@ -754,77 +486,7 @@ html, body {
     overflow-y: auto;
 }
 
-.top-buttons-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.employee-login-container {
-    text-align: right;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.employee-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    background-color: transparent;
-    color: var(--dark-color);
-    border: 2px solid var(--dark-color);
-    border-radius: 20px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.employee-btn i {
-    margin-right: 6px;
-    font-size: 0.9em;
-}
-
-.employee-btn:hover {
-    background-color: var(--dark-color);
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-btn-container {
-    text-align: left;
-}
-
-.dashboard-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    background-color: var(--dark-color);
-    color: var(--white);
-    border: 2px solid var(--dark-color);
-    border-radius: 20px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.dashboard-btn i {
-    margin-right: 6px;
-    font-size: 0.9em;
-}
-
-.dashboard-btn:hover {
-    background-color: #333;
-    border-color: #333;
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Phone hint */
 .phone-hint {
     font-size: 0.8rem;
     color: #666;
@@ -832,7 +494,7 @@ html, body {
     display: none;
 }
 
-/* FULL WIDTH FOOTER FIX */
+/* Footer - Full width */
 footer {
     background-color: #000000;
     color: var(--white);
@@ -868,7 +530,7 @@ footer p {
 }
 
 footer a {
-    color: var(--malaysia-yellow);
+    color: var(--tp-orange);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -878,11 +540,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-#current-year {
-    font-weight: bold;
-}
-
-/* BUTTONS CONTAINER IMPROVEMENTS */
+/* Buttons Container */
 .buttons-container {
     max-width: 800px;
     margin: 0 auto 25px;
@@ -903,7 +561,7 @@ footer a:hover {
     background-color: var(--dark-color);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     font-weight: bold;
     font-size: 1.2rem;
     transition: all 0.3s ease;
@@ -929,7 +587,7 @@ footer a:hover {
     padding: 12px 15px;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     font-weight: bold;
     transition: all 0.3s ease;
 }
@@ -945,126 +603,32 @@ footer a:hover {
     color: var(--white);
 }
 
-.job-portal-btn:hover {
-    background-color: var(--malaysia-yellow);
-    border-color: var(--malaysia-yellow);
-    color: var(--dark-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.dashboard-btn:hover {
-    background-color: var(--malaysia-yellow);
-    border-color: var(--malaysia-yellow);
-    color: var(--dark-color);
-    transform: translateY(-2px);
-}
-
+.job-portal-btn:hover,
+.dashboard-btn:hover,
 .employee-btn:hover {
-    background-color: var(--malaysia-yellow);
-    border-color: var(--malaysia-yellow);
+    background-color: var(--tp-orange);
+    border-color: var(--tp-orange);
     color: var(--dark-color);
     transform: translateY(-2px);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-    }
-    
-    .logo {
-        max-width: 140px;
-    }
-    
-    #qr-code-canvas {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .welcome-logo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .top-buttons-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .dashboard-btn-container,
-    .employee-login-container {
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .employee-login-container {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    footer .row {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    .small-buttons-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .dashboard-btn-wrapper, 
-    .employee-login-wrapper {
-        width: 100%;
-    }
+    .countdown-badge { padding: 25px 30px; max-width: 350px; }
+    .countdown-amount { font-size: 2.6rem; }
+    .welcome-logo { width: 120px; height: 120px; }
+    .small-buttons-row { flex-direction: column; gap: 10px; }
+    .dashboard-btn-wrapper, .employee-login-wrapper { width: 100%; }
+    footer .row { flex-direction: column; text-align: center; gap: 10px; }
 }
 
 @media (max-width: 576px) {
-    .container {
-        padding: 15px;
-    }
-    
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-    }
-    
-    #qr-code-canvas {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .consent-box {
-        font-size: 14px;
-    }
-    
-    .modal-dialog {
-        margin: 0.5rem;
-    }
-    
-    .section-box {
-        padding: 1rem;
-    }
-    
-    .welcome-logo {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .welcome-message-line {
-        font-size: 1rem;
-    }
-    
-    footer {
-        padding: 1.5rem 0;
-    }
-    
-    footer p {
-        font-size: 1rem;
-    }
+    .countdown-badge { padding: 20px 25px; max-width: 320px; }
+    .countdown-amount { font-size: 2.2rem; }
+    .welcome-logo { width: 100px; height: 100px; }
+    .social-icon { width: 40px; height: 40px; font-size: 18px; }
+    #qr-code-canvas { width: 160px; height: 160px; }
+    .section-box { padding: 1rem; }
+    footer { padding: 1.5rem 0; }
+    footer p { font-size: 1rem; }
 }

@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const countdownTitle = document.createElement('div');
         countdownTitle.className = 'welcome-countdown-title';
-        countdownTitle.textContent = 'Total Rewards Available';
+        countdownTitle.textContent = 'Rewards Starting from';
         
         const moneyCountdown = document.createElement('div');
         moneyCountdown.className = 'welcome-money-countdown';
         moneyCountdown.id = 'welcomeMoneyCountdown';
-        moneyCountdown.textContent = 'RM30,000';
+        moneyCountdown.textContent = 'RM500';
         
         const hurryMessage = document.createElement('div');
         hurryMessage.className = 'welcome-hurry-message';
@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Start the countdown animation in popup only
         const moneyElement = document.getElementById('welcomeMoneyCountdown');
-        const startAmount = 0;
-        const endAmount = 500;
+        const startAmount = 0.0;
+        const endAmount = 500.00;
         let currentAmount = startAmount;
-        const duration = 3000;
+        const duration = 300;
         const startTime = Date.now();
         
         function updateCountdown() {

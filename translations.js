@@ -10,7 +10,7 @@ const termsStyles = `
 .bonus-card:hover { transform: translateY(-5px); }
 .bonus-card.johor-bonus { background: #ff5c00; color: #1a1a1a; }
 .bonus-card.standard-bonus { background: #000000; }
-.bonus-card.interpreter-bonus { background: #00af9b; }
+.bonus-card.interpreter-bonus { background: #84c98b; }
 .bonus-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
 .bonus-header h6 { margin: 0; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
 .total-badge { background: rgba(255,255,255,0.25); padding: 8px 20px; border-radius: 25px; font-weight: 700; border: 2px solid rgba(255,255,255,0.5); }
